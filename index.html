@@ -1,99 +1,494 @@
-<p class="tag">Founder · Trader · Writer</p>
+<!DOCTYPE html>
+<html lang="zh-Hans" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <title>杨苏琪 Suki Yang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="杨苏琪 Suki Yang 的个人主页 —— Icon Trading 与 LMAO 的创始人，专注于量化交易、基础设施与注意力经济。"
+  />
 
-<h1>Suki Yang</h1>
-<p class="subtitle">
-  Founder of Icon Trading and LMAO. Building at the intersection of markets,
-  infrastructure, and the attention economy.
-</p>
+  <meta property="og:title" content="Suki Yang" />
+  <meta property="og:description" content="Icon Trading 与 LMAO 创始人，专注于量化交易、基础设施与注意力经济。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://iconsuki.github.io/cn/" />
+  <meta property="og:image" content="https://iconsuki.github.io/og-image.png" />
 
-<p class="intro">
-  I run <strong>Icon Trading</strong>, a crypto-native systematic trading firm
-  focused on mid-frequency and market-making strategies across centralized and
-  decentralized venues. I also founded <strong>LMAO</strong>, a next-generation
-  publisher exchange that helps creators and new tokens move from attention to
-  liquidity.
-</p>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Suki Yang" />
+  <meta name="twitter:description" content="Icon Trading 与 LMAO 创始人，专注于量化交易、基础设施与注意力经济。" />
+  <meta name="twitter:image" content="https://iconsuki.github.io/og-image.png" />
 
-<p class="intro">
-  Previously, I worked in <strong>quant research at Pantera Capital</strong> and
-  <strong>data science at Electric Capital</strong>. My interests span trading
-  infrastructure, incentive design, and internet culture — how capital moves,
-  how memes move, and how builders convert both into durable systems.
-</p>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<div class="pill-list">
-  <span class="pill"><span class="pill-dot"></span> New York</span>
-  <span class="pill">Crypto trading</span>
-  <span class="pill">Attention economy</span>
-</div>
+    :root {
+      --bg: #f8fafc;
+      --bg-soft: #e5e7eb;
+      --text: #020617;
+      --muted: #6b7280;
+      --accent: #1d4ed8;
+      --accent-soft: #e0ebff;
+      --border-subtle: #e2e8f0;
+      --max-width: 760px;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", -apple-system, BlinkMacSystemFont, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+    }
 
-<hr class="section-separator" />
+    [data-theme="dark"] {
+      --bg: #020617;
+      --bg-soft: #0b1220;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --accent-soft: #1d283a;
+      --border-subtle: #1f2933;
+    }
 
-<h2>Current roles</h2>
+    html, body {
+      height: 100%;
+    }
 
-<ul>
-  <li>
-    <strong>Icon Trading</strong> — founder & CIO.<br />
-    Systematic trading and market-making across CEXs and on-chain venues, with
-    latency-aware infra and robust risk systems.
-    [<a href="#" target="_blank">site</a>]
-  </li>
+    body {
+      font-family: var(--font-sans);
+      background: radial-gradient(circle at top, #dbeafe 0, var(--bg) 42%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.7;
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px 48px;
+    }
 
-  <li>
-    <strong>LMAO</strong> — founder.<br />
-    A publisher exchange for the attention economy, helping new tokens and
-    memecoins reach early adopters through secure, high-conversion distribution.
-    [<a href="https://lmao.fun" target="_blank">site</a>]
-  </li>
-</ul>
+    .page {
+      max-width: var(--max-width);
+      width: 100%;
+    }
 
-<h2>Projects</h2>
-<ul>
-  <li><strong>dm.cash</strong> — attention → liquidity experiments. <a href="https://dm.cash" target="_blank">[site]</a></li>
-  <li><strong>LMAO</strong> — publisher exchange for the attention economy. <a href="https://lmao.fun" target="_blank">[site]</a></li>
-  <li><strong>Suki Chat</strong> — longform conversations with founders, traders, and builders.</li>
-</ul>
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      gap: 12px;
+    }
 
-<h2>Short posts</h2>
-<p class="meta">Threads and shorter writing on markets and building.</p>
-<ul>
-  <li><a href="#" target="_blank">From likes to liquidity: designing the right conversion funnel</a> <span class="meta">(2025)</span></li>
-  <li><a href="#" target="_blank">What trading firms can learn from consumer product thinking</a> <span class="meta">(2025)</span></li>
-</ul>
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-<h2>Essays</h2>
-<p class="meta">Longer pieces on trading structure, infra, and the attention economy.</p>
-<ul>
-  <li><a href="#" target="_blank">Icon Trading: building a crypto-native OMS from first principles</a> <span class="meta">(work in progress)</span></li>
-  <li><a href="#" target="_blank">The attention liquidity loop: how memes turn into markets</a> <span class="meta">(work in progress)</span></li>
-</ul>
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+    }
 
-<h2>Talks & interviews</h2>
-<p class="meta">Selected talks, podcasts, and media.</p>
+    .nav-name {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
 
-<ul>
-  <li>ETHCC — talk on trading infra and on-chain liquidity <span class="meta">(2024)</span></li>
-  <li>Podcast interview — market-making in the age of on-chain liquidity</li>
-</ul>
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.85rem;
+    }
 
-<h2>Featured in</h2>
-<ul>
-  <li>Bloomberg — coverage including my interview</li>
-  <li>Unchained — multiple interviews & market commentary</li>
-  <li>Binance Square — cited analysis</li>
-  <li>Sherwood — quoted in market coverage</li>
-  <li>Podcast interviews — YouTube & industry media</li>
-  <li>Medium — selected writing</li>
-</ul>
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+    }
 
-<h2>Media links</h2>
-<ul>
-  <li><a href="https://www.bloomberg.com/news/articles/2023-07-28/crypto-defi-trading-bots-like-unibot-are-taking-over-telegram?embedded-checkout=true" target="_blank">Bloomberg article</a></li>
+    .nav-links a:hover {
+      color: var(--accent);
+    }
 
-  <li><a href="https://unchainedcrypto.com/bitcoin-price-rebounds-to-just-under-60000-erasing-mondays-selloff/" target="_blank">Unchained interview #1</a></li>
+    .nav-divider {
+      width: 1px;
+      height: 14px;
+      background: var(--border-subtle);
+    }
 
-  <li><a href="https://unchainedcrypto.com/eth-held-in-exchange-reserves-drops-to-8-year-low-with-etfs-set-to-begin-trading/" target="_blank">Unchained interview #2</a></li>
+    .theme-toggle {
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      padding: 3px 8px;
+      background: rgba(255, 255, 255, 0.7);
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
 
-  <li><a href="https://unchainedcrypto.com/chill-guy-meme-shows-tiktoks-growing-role-in-fueling-rise-of-memecoins/" target="_blank">Unchained feature #3</a></li>
+    [data-theme="dark"] .theme-toggle {
+      background: #020617;
+    }
 
-  <li><a href="https://unchainedcrypto.com/bonk-near-all-time-high-as-24-hour-volume-on-coinbase-exceeds-that-for-xrp-sol-and-ada/" target="_blank">Unchained featu_
+    header {
+      margin-bottom: 28px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      body {
+        padding-top: 20px;
+      }
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .intro {
+      font-size: 0.97rem;
+      margin-bottom: 8px;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .pill {
+      border-radius: 999px;
+      padding: 2px 10px;
+      background: var(--accent-soft);
+      font-size: 0.78rem;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .avatar-wrapper {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .avatar-card {
+      border-radius: var(--radius-lg);
+      padding: 10px;
+      border: 1px solid var(--border-subtle);
+      background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(248,250,252,0.96));
+      backdrop-filter: blur(14px);
+      max-width: 230px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    [data-theme="dark"] .avatar-card {
+      background: radial-gradient(circle at top, #020617, #020617);
+    }
+
+    .avatar-card img {
+      width: 100%;
+      max-width: 160px;
+      border-radius: var(--radius-md);
+      object-fit: cover;
+      aspect-ratio: 4 / 5;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .avatar-caption {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .section {
+      margin-bottom: 22px;
+    }
+
+    .section h2 {
+      font-size: 1.02rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .section p {
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 4px;
+    }
+
+    li {
+      margin-bottom: 6px;
+      font-size: 0.94rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .section-separator {
+      border: none;
+      border-top: 1px solid var(--border-subtle);
+      margin: 18px 0;
+    }
+
+    .meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav">
+      <div class="nav-left">
+        <div class="brand-mark">SY</div>
+        <div class="nav-name">Suki Yang</div>
+      </div>
+      <div class="nav-links">
+        <a href="#about">简介</a>
+        <a href="#work">工作</a>
+        <a href="#media">媒体</a>
+        <a href="#projects">项目</a>
+        <a href="#contact">联系</a>
+        <span class="nav-divider"></span>
+        <a href="/">EN</a>
+        <a href="/cn/">中文</a>
+        <button class="theme-toggle" type="button" data-theme-toggle>☼</button>
+      </div>
+    </nav>
+
+    <header id="about">
+      <div>
+        <p class="tag">Founder · Trader · Research</p>
+        <h1>杨苏琪 Suki Yang</h1>
+        <p class="subtitle">
+          Icon Trading 与 LMAO 的创始人。
+        </p>
+
+        <p class="intro">
+          我主要在「交易、基础设施、注意力」的交叉点上搭系统，
+          关心的是：资金如何在市场之间流动，注意力如何沉淀成流动性。
+        </p>
+
+        <p class="intro">
+          之前在 <strong>Pantera Capital</strong> 做量化研究（Quant Research），
+          在 <strong>Electric Capital</strong> 做数据科学（Data Science）。
+        </p>
+
+        <div class="pill-list">
+          <span class="pill"><span class="pill-dot"></span> 纽约 New York</span>
+          <span class="pill">量化交易</span>
+          <span class="pill">市场结构</span>
+          <span class="pill">注意力经济</span>
+        </div>
+      </div>
+
+      <div class="avatar-wrapper">
+        <figure class="avatar-card">
+          <img src="../avatar.jpg" alt="Suki Yang 头像" />
+          <figcaption class="avatar-caption">
+            杨苏琪（Suki Yang） — Icon Trading &amp; LMAO 创始人
+          </figcaption>
+        </figure>
+      </div>
+    </header>
+
+    <hr class="section-separator" />
+
+    <section id="work" class="section">
+      <h2>工作 / Work</h2>
+      <ul>
+        <li>
+          <strong>Icon Trading</strong> — 创始人 &amp; CIO<br />
+          一家量化交易公司，覆盖中心化与去中心化市场，
+          侧重点是中频策略与低延迟基础设施。<br />
+          <a href="https://icontrading.co" target="_blank" rel="noreferrer">icontrading.co</a>
+        </li>
+
+        <li>
+          <strong>LMAO</strong> — 创始人<br />
+          一个「注意力 → 流动性」的发行与分发网络，帮助新代币和 memecoin
+          把注意力转化为真实买盘。<br />
+          <a href="https://lmao.fun" target="_blank" rel="noreferrer">lmao.fun</a>
+        </li>
+
+        <li>
+          <strong>Pantera Capital</strong> — Quant Research（量化研究）
+        </li>
+
+        <li>
+          <strong>Electric Capital</strong> — Data Science（数据科学）
+        </li>
+      </ul>
+    </section>
+
+    <hr class="section-separator" />
+
+    <section id="media" class="section">
+      <h2>媒体 &amp; 演讲</h2>
+      <ul>
+        <li>
+          <strong>Bloomberg</strong> — 接受采访，讨论自动化交易与 Telegram 流动性<br />
+          <a href="https://www.bloomberg.com/news/articles/2023-07-28/crypto-defi-trading-bots-like-unibot-are-taking-over-telegram?embedded-checkout=true"
+             target="_blank" rel="noreferrer">Bloomberg 报道</a>
+        </li>
+
+        <li>
+          <strong>Unchained</strong> — 多次在市场评论、memecoin 行为相关话题中被引用<br />
+          <a href="https://unchainedcrypto.com/bitcoin-price-rebounds-to-just-under-60000-erasing-mondays-selloff/"
+             target="_blank" rel="noreferrer">Unchained #1</a><br />
+          <a href="https://unchainedcrypto.com/eth-held-in-exchange-reserves-drops-to-8-year-low-with-etfs-set-to-begin-trading/"
+             target="_blank" rel="noreferrer">Unchained #2</a><br />
+          <a href="https://unchainedcrypto.com/chill-guy-meme-shows-tiktoks-growing-role-in-fueling-rise-of-memecoins/"
+             target="_blank" rel="noreferrer">Unchained #3</a><br />
+          <a href="https://unchainedcrypto.com/bonk-near-all-time-high-as-24-hour-volume-on-coinbase-exceeds-that-for-xrp-sol-and-ada/"
+             target="_blank" rel="noreferrer">Unchained #4</a>
+        </li>
+
+        <li>
+          <strong>Binance Square</strong> — 评论与观点被引用<br />
+          <a href="https://www.binance.com/en/square/post/12874232696505"
+             target="_blank" rel="noreferrer">Binance #1</a><br />
+          <a href="https://www.binance.com/en/square/post/13173444483649"
+             target="_blank" rel="noreferrer">Binance #2</a>
+        </li>
+
+        <li>
+          <strong>Sherwood</strong> — 在市场分析文章中被引用<br />
+          <a href="https://sherwood.news/crypto/dogecoin-races-up-as-crypto-market-rallies/"
+             target="_blank" rel="noreferrer">Sherwood 报道</a>
+        </li>
+
+        <li>
+          <strong>ETHCC</strong> — 做过关于交易基础设施的分享 / 演讲
+        </li>
+
+        <li>
+          <strong>Podcast 访谈</strong><br />
+          <a href="https://www.youtube.com/watch?v=xoFswmQtN9Q"
+             target="_blank" rel="noreferrer">YouTube 访谈</a>
+        </li>
+      </ul>
+    </section>
+
+    <hr class="section-separator" />
+
+    <section id="projects" class="section">
+      <h2>项目 / Projects</h2>
+      <ul>
+        <li>
+          <strong>dm.cash</strong> — 为创作者与社区设计的「注意力 → 流动性」工具<br />
+          <a href="https://dm.cash" target="_blank" rel="noreferrer">dm.cash</a>
+        </li>
+        <li>
+          <strong>LMAO</strong> — 发布与分发网络<br />
+          <a href="https://lmao.fun" target="_blank" rel="noreferrer">lmao.fun</a>
+        </li>
+        <li>
+          <strong>Suki Chat</strong> — 和创始人、交易员的长谈节目（YouTube）
+        </li>
+      </ul>
+    </section>
+
+    <hr class="section-separator" />
+
+    <section id="contact" class="section">
+      <h2>联系 / Contact</h2>
+      <ul>
+        <li>邮箱：<a href="mailto:suki@sukiyang.com">suki@sukiyang.com</a></li>
+        <li>Twitter：<a href="https://twitter.com/tradergirlsuki" target="_blank" rel="noreferrer">@tradergirlsuki</a></li>
+        <li>LinkedIn：<a href="https://linkedin.com/in/sukiyang" target="_blank" rel="noreferrer">linkedin.com/in/sukiyang</a></li>
+      </ul>
+    </section>
+
+    <hr class="section-separator" />
+    <footer>
+      <p class="meta">最后更新：2025 年 11 月。</p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const stored = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const initial = stored || (prefersDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", initial);
+    })();
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector("[data-theme-toggle]");
+      if (!toggle) return;
+
+      function updateLabel() {
+        const theme = document.documentElement.getAttribute("data-theme") || "light";
+        toggle.textContent = theme === "dark" ? "☾" : "☼";
+      }
+
+      toggle.addEventListener("click", function () {
+        const current = document.documentElement.getAttribute("data-theme") || "light";
+        const next = current === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+        updateLabel();
+      });
+
+      updateLabel();
+    });
+  </script>
+</body>
+</html>
