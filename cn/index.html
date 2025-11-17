@@ -6,18 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="杨苏琪 Suki Yang 的个人主页 —— Icon Trading 与 LMAO 的创始人，专注于量化交易、基础设施与注意力经济。"
+    content="杨苏琪 Suki Yang 的个人主页 —— Icon Trading 与 LMAO 的创始人，专注于加密交易、基础设施与注意力经济。"
   />
 
   <meta property="og:title" content="Suki Yang" />
-  <meta property="og:description" content="Icon Trading 与 LMAO 创始人，专注于量化交易、基础设施与注意力经济。" />
+  <meta property="og:description" content="Icon Trading 与 LMAO 创始人，专注于加密交易、基础设施与注意力经济。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://iconsuki.github.io/cn/" />
   <meta property="og:image" content="https://iconsuki.github.io/og-image.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Suki Yang" />
-  <meta name="twitter:description" content="Icon Trading 与 LMAO 创始人，专注于量化交易、基础设施与注意力经济。" />
+  <meta name="twitter:description" content="Icon Trading 与 LMAO 创始人，专注于加密交易、基础设施与注意力经济。" />
   <meta name="twitter:image" content="https://iconsuki.github.io/og-image.png" />
 
   <style>
@@ -28,29 +28,27 @@
     }
 
     :root {
-      --bg: #f8fafc;
+      --bg: #f9fafb;
       --bg-soft: #e5e7eb;
       --text: #020617;
       --muted: #6b7280;
-      --accent: #1d4ed8;
-      --accent-soft: #e0ebff;
-      --border-subtle: #e2e8f0;
-      --max-width: 760px;
+      --accent: #60a5fa;
+      --accent-soft: #dbeafe1a;
+      --border-subtle: #d1d5db;
+      --max-width: 900px;
       --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", -apple-system, BlinkMacSystemFont, "PingFang SC",
-        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      --radius-lg: 16px;
-      --radius-md: 10px;
+        "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+        sans-serif;
     }
 
     [data-theme="dark"] {
       --bg: #020617;
-      --bg-soft: #0b1220;
+      --bg-soft: #020617;
       --text: #e5e7eb;
       --muted: #9ca3af;
       --accent: #60a5fa;
       --accent-soft: #1d283a;
-      --border-subtle: #1f2933;
+      --border-subtle: #1f2937;
     }
 
     html, body {
@@ -59,12 +57,16 @@
 
     body {
       font-family: var(--font-sans);
-      background: radial-gradient(circle at top, #dbeafe 0, var(--bg) 42%, var(--bg) 100%);
+      background: radial-gradient(circle at top left, #e5edff 0, var(--bg) 40%, var(--bg) 100%);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.8;
       display: flex;
       justify-content: center;
-      padding: 32px 16px 48px;
+      padding: 32px 16px 56px;
+    }
+
+    [data-theme="dark"] body {
+      background: radial-gradient(circle at top left, #020617 0, #020617 55%, #000000 100%);
     }
 
     .page {
@@ -76,28 +78,32 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 24px;
-      gap: 12px;
+      margin-bottom: 28px;
+      gap: 16px;
     }
 
     .nav-left {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
     .brand-mark {
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       border-radius: 999px;
       border: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       font-weight: 600;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--text);
+    }
+
+    [data-theme="dark"] .brand-mark {
+      background: rgba(15, 23, 42, 0.9);
     }
 
     .nav-name {
@@ -108,8 +114,9 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       font-size: 0.85rem;
+      white-space: nowrap;
     }
 
     .nav-links a {
@@ -123,81 +130,125 @@
 
     .nav-divider {
       width: 1px;
-      height: 14px;
+      height: 16px;
       background: var(--border-subtle);
     }
 
     .theme-toggle {
-      border-radius: 999px;
-      border: 1px solid var(--border-subtle);
-      padding: 3px 8px;
-      background: rgba(255, 255, 255, 0.7);
-      font-size: 0.8rem;
+      border: none;
+      background: transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       cursor: pointer;
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 0;
     }
 
-    [data-theme="dark"] .theme-toggle {
-      background: #020617;
+    .toggle-track {
+      width: 34px;
+      height: 18px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.55);
+      position: relative;
+      transition: background 0.2s ease;
+    }
+
+    .toggle-thumb {
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: #f9fafb;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.22s ease;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.5);
+    }
+
+    [data-theme="dark"] .toggle-track {
+      background: rgba(55, 65, 81, 0.9);
+    }
+
+    [data-theme="dark"] .toggle-thumb {
+      transform: translateX(14px);
+      background: #0b1120;
+      box-shadow: 0 1px 4px rgba(15, 23, 42, 0.8);
+    }
+
+    .toggle-label {
+      font-size: 0.75rem;
+      opacity: 0.9;
     }
 
     header {
-      margin-bottom: 28px;
+      margin-bottom: 34px;
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
-      gap: 16px;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      gap: 26px;
       align-items: center;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 820px) {
       header {
         grid-template-columns: minmax(0, 1fr);
       }
       body {
         padding-top: 20px;
       }
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+      }
     }
 
     h1 {
-      font-size: 2.1rem;
+      font-size: 2.5rem;
       font-weight: 700;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
     }
 
     .subtitle {
-      font-size: 0.98rem;
+      font-size: 1rem;
       color: var(--muted);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .intro {
-      font-size: 0.97rem;
-      margin-bottom: 8px;
+      font-size: 0.98rem;
+      margin-bottom: 10px;
     }
 
     .tag {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.16em;
       color: var(--muted);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .pill-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
+      gap: 8px;
+      margin-top: 10px;
     }
 
     .pill {
       border-radius: 999px;
-      padding: 2px 10px;
+      padding: 4px 12px;
       background: var(--accent-soft);
       font-size: 0.78rem;
       color: var(--accent);
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
+      border: 1px solid rgba(148, 163, 184, 0.32);
     }
 
     .pill-dot {
@@ -213,46 +264,51 @@
     }
 
     .avatar-card {
-      border-radius: var(--radius-lg);
-      padding: 10px;
+      border-radius: 28px;
+      padding: 14px;
       border: 1px solid var(--border-subtle);
-      background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(248,250,252,0.96));
-      backdrop-filter: blur(14px);
-      max-width: 230px;
+      background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.18), rgba(15, 23, 42, 0.95));
+      backdrop-filter: blur(22px);
+      max-width: 260px;
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.7);
     }
 
-    [data-theme="dark"] .avatar-card {
-      background: radial-gradient(circle at top, #020617, #020617);
+    [data-theme="light"] .avatar-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(248,250,252,0.98));
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
     }
 
     .avatar-card img {
       width: 100%;
-      max-width: 160px;
-      border-radius: var(--radius-md);
+      max-width: 190px;
+      border-radius: 22px;
       object-fit: cover;
       aspect-ratio: 4 / 5;
-      border: 1px solid var(--border-subtle);
+      border: 1px solid rgba(148, 163, 184, 0.55);
     }
 
     .avatar-caption {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: var(--muted);
       text-align: center;
     }
 
     .section {
-      margin-bottom: 22px;
+      margin-bottom: 26px;
     }
 
     .section h2 {
-      font-size: 1.02rem;
+      font-size: 1rem;
       font-weight: 600;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
     .section p {
@@ -266,8 +322,8 @@
     }
 
     li {
-      margin-bottom: 6px;
-      font-size: 0.94rem;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
     }
 
     a {
@@ -281,8 +337,8 @@
 
     .section-separator {
       border: none;
-      border-top: 1px solid var(--border-subtle);
-      margin: 18px 0;
+      border-top: 1px solid rgba(148, 163, 184, 0.3);
+      margin: 22px 0;
     }
 
     .meta {
@@ -307,7 +363,12 @@
         <span class="nav-divider"></span>
         <a href="/">EN</a>
         <a href="/cn/">中文</a>
-        <button class="theme-toggle" type="button" data-theme-toggle>☼</button>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换深浅色模式">
+          <span class="toggle-track">
+            <span class="toggle-thumb"></span>
+          </span>
+          <span class="toggle-label" data-theme-label>浅色</span>
+        </button>
       </div>
     </nav>
 
@@ -331,7 +392,7 @@
 
         <div class="pill-list">
           <span class="pill"><span class="pill-dot"></span> 纽约 New York</span>
-          <span class="pill">量化交易</span>
+          <span class="pill">加密交易</span>
           <span class="pill">市场结构</span>
           <span class="pill">注意力经济</span>
         </div>
@@ -350,20 +411,18 @@
     <hr class="section-separator" />
 
     <section id="work" class="section">
-      <h2>工作 / Work</h2>
+      <h2>WORK / 工作</h2>
       <ul>
         <li>
-          <strong>Icon Trading</strong> — 创始人 &amp; CIO<br />
+          <strong><a href="https://icontrading.com" target="_blank" rel="noreferrer">Icon Trading</a></strong> — 创始人 &amp; CIO<br />
           一家量化交易公司，覆盖中心化与去中心化市场，
-          侧重点是中频策略与低延迟基础设施。<br />
-          <a href="https://icontrading.com" target="_blank" rel="noreferrer">icontrading.com</a>
+          侧重点是中频策略与低延迟基础设施。
         </li>
 
         <li>
-          <strong>LMAO</strong> — 创始人<br />
+          <strong><a href="https://lmao.fun" target="_blank" rel="noreferrer">LMAO</a></strong> — 创始人<br />
           一个「注意力 → 流动性」的发行与分发网络，帮助新代币和 memecoin
-          把注意力转化为真实买盘。<br />
-          <a href="https://lmao.fun" target="_blank" rel="noreferrer">lmao.fun</a>
+          把注意力转化为真实买盘。
         </li>
 
         <li>
@@ -379,7 +438,7 @@
     <hr class="section-separator" />
 
     <section id="media" class="section">
-      <h2>媒体 &amp; 演讲</h2>
+      <h2>MEDIA &amp; TALKS / 媒体与演讲</h2>
       <ul>
         <li>
           <strong>Bloomberg</strong> — 接受采访，讨论自动化交易与 Telegram 流动性<br />
@@ -390,21 +449,21 @@
         <li>
           <strong>Unchained</strong> — 多次在市场评论、memecoin 行为相关话题中被引用<br />
           <a href="https://unchainedcrypto.com/bitcoin-price-rebounds-to-just-under-60000-erasing-mondays-selloff/"
-             target="_blank" rel="noreferrer">Unchained #1</a><br />
+             target="_blank" rel="noreferrer">Unchained 报道 #1</a><br />
           <a href="https://unchainedcrypto.com/eth-held-in-exchange-reserves-drops-to-8-year-low-with-etfs-set-to-begin-trading/"
-             target="_blank" rel="noreferrer">Unchained #2</a><br />
+             target="_blank" rel="noreferrer">Unchained 报道 #2</a><br />
           <a href="https://unchainedcrypto.com/chill-guy-meme-shows-tiktoks-growing-role-in-fueling-rise-of-memecoins/"
-             target="_blank" rel="noreferrer">Unchained #3</a><br />
+             target="_blank" rel="noreferrer">Unchained 报道 #3</a><br />
           <a href="https://unchainedcrypto.com/bonk-near-all-time-high-as-24-hour-volume-on-coinbase-exceeds-that-for-xrp-sol-and-ada/"
-             target="_blank" rel="noreferrer">Unchained #4</a>
+             target="_blank" rel="noreferrer">Unchained 报道 #4</a>
         </li>
 
         <li>
           <strong>Binance Square</strong> — 评论与观点被引用<br />
           <a href="https://www.binance.com/en/square/post/12874232696505"
-             target="_blank" rel="noreferrer">Binance #1</a><br />
+             target="_blank" rel="noreferrer">Binance 报道 #1</a><br />
           <a href="https://www.binance.com/en/square/post/13173444483649"
-             target="_blank" rel="noreferrer">Binance #2</a>
+             target="_blank" rel="noreferrer">Binance 报道 #2</a>
         </li>
 
         <li>
@@ -428,18 +487,16 @@
     <hr class="section-separator" />
 
     <section id="projects" class="section">
-      <h2>项目 / Projects</h2>
+      <h2>PROJECTS / 项目</h2>
       <ul>
         <li>
-          <strong>dm.cash</strong> — 为创作者与社区设计的「注意力 → 流动性」工具<br />
-          <a href="https://dm.cash" target="_blank" rel="noreferrer">dm.cash</a>
+          <strong><a href="https://dm.cash" target="_blank" rel="noreferrer">dm.cash</a></strong> — 为创作者与社区设计的「注意力 → 流动性」工具。
         </li>
         <li>
-          <strong>LMAO</strong> — 发布与分发网络<br />
-          <a href="https://lmao.fun" target="_blank" rel="noreferrer">lmao.fun</a>
+          <strong><a href="https://lmao.fun" target="_blank" rel="noreferrer">LMAO</a></strong> — 发布与分发网络。
         </li>
         <li>
-          <strong>Suki Chat</strong> — 和创始人、交易员的长谈节目（YouTube）
+          <strong>Suki Chat</strong> — 和创始人、交易员的长谈节目（YouTube）。
         </li>
       </ul>
     </section>
@@ -447,7 +504,7 @@
     <hr class="section-separator" />
 
     <section id="contact" class="section">
-      <h2>联系 / Contact</h2>
+      <h2>CONTACT / 联系</h2>
       <ul>
         <li>邮箱：<a href="mailto:suki@sukiyang.com">suki@sukiyang.com</a></li>
         <li>Twitter：<a href="https://twitter.com/tradergirlsuki" target="_blank" rel="noreferrer">@tradergirlsuki</a></li>
@@ -472,11 +529,12 @@
 
     document.addEventListener("DOMContentLoaded", function () {
       const toggle = document.querySelector("[data-theme-toggle]");
-      if (!toggle) return;
+      const label = document.querySelector("[data-theme-label]");
+      if (!toggle || !label) return;
 
       function updateLabel() {
         const theme = document.documentElement.getAttribute("data-theme") || "light";
-        toggle.textContent = theme === "dark" ? "☾" : "☼";
+        label.textContent = theme === "dark" ? "深色" : "浅色";
       }
 
       toggle.addEventListener("click", function () {
