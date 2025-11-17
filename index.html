@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="zh-Hans" data-theme="light">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <title>杨苏琪 Suki Yang</title>
+  <title>Suki Yang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="杨苏琪 Suki Yang 的个人主页 —— Icon Trading 与 LMAO 的创始人，专注于量化交易、基础设施与注意力经济。"
+    content="Personal site of Suki Yang – founder of Icon Trading and LMAO, building at the intersection of trading, infrastructure, and the attention economy."
   />
 
+  <!-- Open Graph / Twitter preview -->
   <meta property="og:title" content="Suki Yang" />
-  <meta property="og:description" content="Icon Trading 与 LMAO 创始人，专注于量化交易、基础设施与注意力经济。" />
+  <meta property="og:description" content="Founder of Icon Trading and LMAO. Systems at the intersection of trading, infrastructure, and online behavior." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://iconsuki.github.io/cn/" />
+  <meta property="og:url" content="https://iconsuki.github.io/" />
+  <!-- 上传一张图片命名为 og-image.png 放在仓库根目录 -->
   <meta property="og:image" content="https://iconsuki.github.io/og-image.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Suki Yang" />
-  <meta name="twitter:description" content="Icon Trading 与 LMAO 创始人，专注于量化交易、基础设施与注意力经济。" />
+  <meta name="twitter:description" content="Founder of Icon Trading and LMAO. Systems at the intersection of trading, infrastructure, and online behavior." />
   <meta name="twitter:image" content="https://iconsuki.github.io/og-image.png" />
 
   <style>
@@ -37,8 +39,7 @@
       --border-subtle: #e2e8f0;
       --max-width: 760px;
       --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", -apple-system, BlinkMacSystemFont, "PingFang SC",
-        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        "Segoe UI", sans-serif;
       --radius-lg: 16px;
       --radius-md: 10px;
     }
@@ -61,7 +62,7 @@
       font-family: var(--font-sans);
       background: radial-gradient(circle at top, #dbeafe 0, var(--bg) 42%, var(--bg) 100%);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.65;
       display: flex;
       justify-content: center;
       padding: 32px 16px 48px;
@@ -72,6 +73,7 @@
       width: 100%;
     }
 
+    /* Top nav */
     .nav {
       display: flex;
       align-items: center;
@@ -299,11 +301,12 @@
         <div class="nav-name">Suki Yang</div>
       </div>
       <div class="nav-links">
-        <a href="#about">简介</a>
-        <a href="#work">工作</a>
-        <a href="#media">媒体</a>
-        <a href="#projects">项目</a>
-        <a href="#contact">联系</a>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#writing">Writing</a>
+        <a href="#media">Media</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
         <span class="nav-divider"></span>
         <a href="/">EN</a>
         <a href="/cn/">中文</a>
@@ -314,34 +317,34 @@
     <header id="about">
       <div>
         <p class="tag">Founder · Trader · Research</p>
-        <h1>杨苏琪 Suki Yang</h1>
+        <h1>Suki Yang</h1>
         <p class="subtitle">
-          Icon Trading 与 LMAO 的创始人。
+          Founder of Icon Trading and LMAO.
         </p>
 
         <p class="intro">
-          我主要在「交易、基础设施、注意力」的交叉点上搭系统，
-          关心的是：资金如何在市场之间流动，注意力如何沉淀成流动性。
+          I build systems at the intersection of trading, infrastructure, and online behavior.
+          My work focuses on how capital flows through markets and how attention shapes liquidity.
         </p>
 
         <p class="intro">
-          之前在 <strong>Pantera Capital</strong> 做量化研究（Quant Research），
-          在 <strong>Electric Capital</strong> 做数据科学（Data Science）。
+          Previously: quant research at Pantera Capital, data science at Electric Capital.
         </p>
 
         <div class="pill-list">
-          <span class="pill"><span class="pill-dot"></span> 纽约 New York</span>
-          <span class="pill">量化交易</span>
-          <span class="pill">市场结构</span>
-          <span class="pill">注意力经济</span>
+          <span class="pill"><span class="pill-dot"></span> New York</span>
+          <span class="pill">Crypto trading</span>
+          <span class="pill">Market structure</span>
+          <span class="pill">Attention economy</span>
         </div>
       </div>
 
       <div class="avatar-wrapper">
         <figure class="avatar-card">
-          <img src="../avatar.jpg" alt="Suki Yang 头像" />
+          <!-- 上传一张头像图片命名为 avatar.jpg 放在仓库根目录 -->
+          <img src="avatar.jpg" alt="Portrait of Suki Yang" />
           <figcaption class="avatar-caption">
-            杨苏琪（Suki Yang） — Icon Trading &amp; LMAO 创始人
+            Suki Yang — founder of Icon Trading & LMAO.
           </figcaption>
         </figure>
       </div>
@@ -350,28 +353,51 @@
     <hr class="section-separator" />
 
     <section id="work" class="section">
-      <h2>工作 / Work</h2>
+      <h2>Work</h2>
       <ul>
         <li>
-          <strong>Icon Trading</strong> — 创始人 &amp; CIO<br />
-          一家量化交易公司，覆盖中心化与去中心化市场，
-          侧重点是中频策略与低延迟基础设施。<br />
+          <strong>Icon Trading</strong> — Founder &amp; CIO<br />
+          A quant trading firm operating across centralized and decentralized markets,
+          with an emphasis on mid-frequency strategies and latency-aware infrastructure.<br />
           <a href="https://icontrading.co" target="_blank" rel="noreferrer">icontrading.co</a>
         </li>
 
         <li>
-          <strong>LMAO</strong> — 创始人<br />
-          一个「注意力 → 流动性」的发行与分发网络，帮助新代币和 memecoin
-          把注意力转化为真实买盘。<br />
+          <strong>LMAO</strong> — Founder<br />
+          A publisher exchange helping new tokens and memecoins convert attention into liquidity.<br />
           <a href="https://lmao.fun" target="_blank" rel="noreferrer">lmao.fun</a>
         </li>
 
         <li>
-          <strong>Pantera Capital</strong> — Quant Research（量化研究）
+          <strong>Pantera Capital</strong> — Quant Research
         </li>
 
         <li>
-          <strong>Electric Capital</strong> — Data Science（数据科学）
+          <strong>Electric Capital</strong> — Data Science
+        </li>
+      </ul>
+    </section>
+
+    <hr class="section-separator" />
+
+    <section id="writing" class="section">
+      <h2>Writing</h2>
+      <ul>
+        <li>
+          Medium — longer notes on markets, incentives, and trading infrastructure<br />
+          <a href="https://medium.com/@sukiunderwood1" target="_blank" rel="noreferrer">
+            medium.com/@sukiunderwood1
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" rel="noreferrer">
+            From likes to liquidity: converting social attention into predictable flows
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" rel="noreferrer">
+            What trading can learn from consumer product intuition
+          </a>
         </li>
       </ul>
     </section>
@@ -379,16 +405,16 @@
     <hr class="section-separator" />
 
     <section id="media" class="section">
-      <h2>媒体 &amp; 演讲</h2>
+      <h2>Talks &amp; media</h2>
       <ul>
         <li>
-          <strong>Bloomberg</strong> — 接受采访，讨论自动化交易与 Telegram 流动性<br />
+          <strong>Bloomberg</strong> — interviewed on trading automation and Telegram liquidity<br />
           <a href="https://www.bloomberg.com/news/articles/2023-07-28/crypto-defi-trading-bots-like-unibot-are-taking-over-telegram?embedded-checkout=true"
-             target="_blank" rel="noreferrer">Bloomberg 报道</a>
+             target="_blank" rel="noreferrer">Bloomberg article</a>
         </li>
 
         <li>
-          <strong>Unchained</strong> — 多次在市场评论、memecoin 行为相关话题中被引用<br />
+          <strong>Unchained</strong> — market commentary &amp; memecoin behavior<br />
           <a href="https://unchainedcrypto.com/bitcoin-price-rebounds-to-just-under-60000-erasing-mondays-selloff/"
              target="_blank" rel="noreferrer">Unchained #1</a><br />
           <a href="https://unchainedcrypto.com/eth-held-in-exchange-reserves-drops-to-8-year-low-with-etfs-set-to-begin-trading/"
@@ -400,7 +426,7 @@
         </li>
 
         <li>
-          <strong>Binance Square</strong> — 评论与观点被引用<br />
+          <strong>Binance Square</strong> — commentary referenced<br />
           <a href="https://www.binance.com/en/square/post/12874232696505"
              target="_blank" rel="noreferrer">Binance #1</a><br />
           <a href="https://www.binance.com/en/square/post/13173444483649"
@@ -408,19 +434,19 @@
         </li>
 
         <li>
-          <strong>Sherwood</strong> — 在市场分析文章中被引用<br />
+          <strong>Sherwood</strong> — cited in market coverage<br />
           <a href="https://sherwood.news/crypto/dogecoin-races-up-as-crypto-market-rallies/"
-             target="_blank" rel="noreferrer">Sherwood 报道</a>
+             target="_blank" rel="noreferrer">Sherwood</a>
         </li>
 
         <li>
-          <strong>ETHCC</strong> — 做过关于交易基础设施的分享 / 演讲
+          <strong>ETHCC</strong> — talk on trading infrastructure
         </li>
 
         <li>
-          <strong>Podcast 访谈</strong><br />
+          <strong>Podcast interviews</strong><br />
           <a href="https://www.youtube.com/watch?v=xoFswmQtN9Q"
-             target="_blank" rel="noreferrer">YouTube 访谈</a>
+             target="_blank" rel="noreferrer">YouTube interview</a>
         </li>
       </ul>
     </section>
@@ -428,18 +454,18 @@
     <hr class="section-separator" />
 
     <section id="projects" class="section">
-      <h2>项目 / Projects</h2>
+      <h2>Projects</h2>
       <ul>
         <li>
-          <strong>dm.cash</strong> — 为创作者与社区设计的「注意力 → 流动性」工具<br />
+          <strong>dm.cash</strong> — tools for creators &amp; communities<br />
           <a href="https://dm.cash" target="_blank" rel="noreferrer">dm.cash</a>
         </li>
         <li>
-          <strong>LMAO</strong> — 发布与分发网络<br />
+          <strong>LMAO</strong> — publisher exchange<br />
           <a href="https://lmao.fun" target="_blank" rel="noreferrer">lmao.fun</a>
         </li>
         <li>
-          <strong>Suki Chat</strong> — 和创始人、交易员的长谈节目（YouTube）
+          <strong>Suki Chat</strong> — conversations with founders &amp; traders (YouTube)
         </li>
       </ul>
     </section>
@@ -447,17 +473,17 @@
     <hr class="section-separator" />
 
     <section id="contact" class="section">
-      <h2>联系 / Contact</h2>
+      <h2>Contact</h2>
       <ul>
-        <li>邮箱：<a href="mailto:suki@sukiyang.com">suki@sukiyang.com</a></li>
-        <li>Twitter：<a href="https://twitter.com/tradergirlsuki" target="_blank" rel="noreferrer">@tradergirlsuki</a></li>
-        <li>LinkedIn：<a href="https://linkedin.com/in/sukiyang" target="_blank" rel="noreferrer">linkedin.com/in/sukiyang</a></li>
+        <li>Email: <a href="mailto:suki@sukiyang.com">suki@sukiyang.com</a></li>
+        <li>Twitter: <a href="https://twitter.com/tradergirlsuki" target="_blank" rel="noreferrer">@tradergirlsuki</a></li>
+        <li>LinkedIn: <a href="https://linkedin.com/in/sukiyang" target="_blank" rel="noreferrer">linkedin.com/in/sukiyang</a></li>
       </ul>
     </section>
 
     <hr class="section-separator" />
     <footer>
-      <p class="meta">最后更新：2025 年 11 月。</p>
+      <p class="meta">Last updated: November 2025.</p>
     </footer>
   </div>
 
