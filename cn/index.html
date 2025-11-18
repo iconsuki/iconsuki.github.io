@@ -43,9 +43,9 @@
       --accent: #2563eb;
       --accent-soft: #dbeafe;
 
-      --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.10);
+      --shadow-hero: 0 16px 40px rgba(15, 23, 42, 0.16);
+
       --radius-lg: 20px;
-      --radius-md: 12px;
       --max-width: 840px;
 
       --font-sans: system-ui, -apple-system, BlinkMacSystemFont,
@@ -66,7 +66,7 @@
       --accent: #60a5fa;
       --accent-soft: #1d4ed8;
 
-      --shadow-soft: 0 18px 55px rgba(0, 0, 0, 0.7);
+      --shadow-hero: 0 22px 60px rgba(0, 0, 0, 0.8);
     }
 
     body {
@@ -82,20 +82,11 @@
     .page {
       max-width: var(--max-width);
       width: 100%;
-      background: var(--card-bg);
-      border-radius: 28px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border-subtle);
-      padding: 22px 24px 26px;
     }
 
     @media (max-width: 768px) {
       body {
-        padding: 16px;
-      }
-      .page {
-        border-radius: 20px;
-        padding: 18px 16px 22px;
+        padding: 20px 14px 28px;
       }
     }
 
@@ -103,7 +94,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       gap: 16px;
     }
     .nav-left {
@@ -121,7 +112,7 @@
       justify-content: center;
       font-size: 0.8rem;
       font-weight: 600;
-      background: var(--card-bg-soft);
+      background: rgba(255,255,255,0.9);
     }
     .nav-name {
       font-size: 0.96rem;
@@ -200,6 +191,7 @@
       border-radius: var(--radius-lg);
       background: var(--card-bg-soft);
       border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-hero);
       display: grid;
       grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
       gap: 18px;
@@ -276,7 +268,7 @@
     }
 
     .section {
-      padding: 16px 2px 4px;
+      padding: 18px 2px 6px;
       border-top: 1px solid var(--border-subtle);
       margin-top: 10px;
     }
@@ -323,7 +315,7 @@
     footer {
       padding-top: 10px;
       border-top: 1px solid var(--border-subtle);
-      margin-top: 12px;
+      margin-top: 14px;
     }
     .meta {
       font-size: 0.8rem;
