@@ -22,64 +22,97 @@
   <meta name="twitter:image" content="https://iconsuki.github.io/og-image.png" />
 
   <style>
+    /* ---------- Reset ---------- */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
-    :root {
-      --bg: #f9fafb;
-      --bg-soft: #e5e7eb;
-      --text: #020617;
-      --muted: #6b7280;
-      --accent: #60a5fa;
-      --accent-soft: #dbeafe1a;
-      --border-subtle: #d1d5db;
-      --max-width: 900px;
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-    }
-
-    [data-theme="dark"] {
-      --bg: #020617;
-      --bg-soft: #020617;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #60a5fa;
-      --accent-soft: #1d283a;
-      --border-subtle: #1f2937;
-    }
-
     html, body {
       height: 100%;
     }
 
+    /* ---------- Tokens ---------- */
+    :root {
+      --body-bg: linear-gradient(135deg, #e7f0ff 0%, #f6f8ff 45%, #e7f0ff 100%);
+      --surface: rgba(255, 255, 255, 0.92);
+      --surface-soft: rgba(255, 255, 255, 0.8);
+      --border-subtle: #d0d7e6;
+
+      --text: #020617;
+      --muted: #64748b;
+      --muted-soft: #94a3b8;
+
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.12);
+
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+
+      --max-width: 960px;
+    }
+
+    [data-theme="dark"] {
+      --body-bg: radial-gradient(120% 160% at 0% 0%, #1f2937 0%, #020617 55%, #020617 100%);
+      --surface: rgba(15, 23, 42, 0.94);
+      --surface-soft: rgba(15, 23, 42, 0.86);
+      --border-subtle: #1f2937;
+
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --muted-soft: #6b7280;
+
+      --accent: #60a5fa;
+      --accent-soft: #1d4ed8;
+      --shadow-soft: 0 18px 55px rgba(0, 0, 0, 0.6);
+    }
+
+    /* ---------- Layout ---------- */
     body {
       font-family: var(--font-sans);
-      background: radial-gradient(circle at top left, #e5edff 0, var(--bg) 40%, var(--bg) 100%);
+      background: var(--body-bg);
       color: var(--text);
       line-height: 1.7;
       display: flex;
       justify-content: center;
-      padding: 32px 16px 56px;
+      padding: 32px 16px 40px;
     }
 
-    [data-theme="dark"] body {
-      background: radial-gradient(circle at top left, #020617 0, #020617 55%, #000000 100%);
-    }
-
-    .page {
-      max-width: var(--max-width);
+    .shell {
       width: 100%;
+      max-width: var(--max-width);
+      border-radius: 32px;
+      background: radial-gradient(circle at 0 0, rgba(255,255,255,0.12), transparent 55%),
+                  radial-gradient(circle at 100% 0, rgba(129,140,248,0.14), transparent 55%),
+                  var(--surface);
+      border: 1px solid rgba(148,163,184,0.25);
+      box-shadow: var(--shadow-soft);
+      padding: 22px 22px 26px;
+      backdrop-filter: blur(18px);
     }
 
-    /* Nav */
+    @media (max-width: 768px) {
+      body {
+        padding: 16px;
+      }
+      .shell {
+        border-radius: 22px;
+        padding: 18px 16px 22px;
+      }
+    }
+
+    /* ---------- Nav ---------- */
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       gap: 16px;
     }
 
@@ -90,34 +123,34 @@
     }
 
     .brand-mark {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 999px;
-      border: 1px solid var(--border-subtle);
+      border: 1px solid rgba(148,163,184,0.35);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      background: rgba(255, 255, 255, 0.9);
-      color: var(--text);
-    }
-
-    [data-theme="dark"] .brand-mark {
-      background: rgba(15, 23, 42, 0.9);
+      background: var(--surface-soft);
     }
 
     .nav-name {
-      font-size: 0.9rem;
+      font-size: 0.98rem;
       font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted-soft);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 14px;
-      font-size: 0.85rem;
-      white-space: nowrap;
+      font-size: 0.86rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .nav-links a {
@@ -132,132 +165,127 @@
     .nav-divider {
       width: 1px;
       height: 16px;
-      background: var(--border-subtle);
+      background: rgba(148,163,184,0.5);
     }
 
-    /* Toggle switch */
+    /* ---------- Theme toggle (slider) ---------- */
     .theme-toggle {
       border: none;
-      background: transparent;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      cursor: pointer;
-      font-size: 0.8rem;
-      color: var(--muted);
+      background: none;
       padding: 0;
+      cursor: pointer;
     }
 
     .toggle-track {
-      width: 34px;
-      height: 18px;
+      width: 42px;
+      height: 22px;
       border-radius: 999px;
-      background: rgba(148, 163, 184, 0.55);
+      background: rgba(148,163,184,0.35);
       position: relative;
-      transition: background 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5px;
     }
 
     .toggle-thumb {
-      width: 14px;
-      height: 14px;
+      position: absolute;
+      width: 18px;
+      height: 18px;
       border-radius: 999px;
       background: #f9fafb;
-      position: absolute;
-      top: 2px;
+      box-shadow: 0 2px 6px rgba(15,23,42,0.35);
       left: 2px;
-      transition: transform 0.22s ease;
-      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.5);
-    }
-
-    [data-theme="dark"] .toggle-track {
-      background: rgba(55, 65, 81, 0.9);
+      transition: transform 0.2s ease;
     }
 
     [data-theme="dark"] .toggle-thumb {
-      transform: translateX(14px);
-      background: #0b1120;
-      box-shadow: 0 1px 4px rgba(15, 23, 42, 0.8);
+      transform: translateX(18px);
+      background: #020617;
     }
 
-    .toggle-label {
-      font-size: 0.75rem;
-      opacity: 0.9;
+    .toggle-icon {
+      font-size: 0.7rem;
+      opacity: 0.8;
+      z-index: 1;
     }
 
+    [data-theme="dark"] .toggle-icon-sun {
+      opacity: 0.45;
+    }
+    [data-theme="dark"] .toggle-icon-moon {
+      opacity: 1;
+    }
+
+    /* ---------- Hero ---------- */
     header {
-      margin-bottom: 34px;
+      margin-bottom: 26px;
+      padding: 22px 20px 20px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(248,250,252,0.96), rgba(239,246,255,0.94));
+      border: 1px solid rgba(209,213,219,0.6);
       display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-      gap: 26px;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 20px;
       align-items: center;
     }
 
-    @media (max-width: 820px) {
+    [data-theme="dark"] header {
+      background: radial-gradient(circle at 0 0, #020617, #020617);
+      border-color: rgba(15,23,42,0.9);
+    }
+
+    @media (max-width: 768px) {
       header {
         grid-template-columns: minmax(0, 1fr);
+        padding: 18px 16px 16px;
       }
-      body {
-        padding-top: 20px;
-      }
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .nav-links {
-        flex-wrap: wrap;
-      }
+    }
+
+    .tagline {
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted-soft);
+      margin-bottom: 10px;
     }
 
     h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      letter-spacing: -0.03em;
+      font-size: clamp(2.2rem, 3vw + 1.3rem, 2.8rem);
+      font-weight: 750;
+      letter-spacing: 0.03em;
+      margin-bottom: 6px;
     }
 
     .subtitle {
-      font-size: 1rem;
+      font-size: 1.02rem;
       color: var(--muted);
       margin-bottom: 16px;
     }
 
     .intro {
-      font-size: 0.98rem;
-      margin-bottom: 10px;
+      font-size: 0.97rem;
+      margin-bottom: 8px;
     }
 
-    .tag {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .pill-list {
+    .chips {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-top: 10px;
     }
 
-    .pill {
+    .chip {
       border-radius: 999px;
-      padding: 4px 12px;
-      background: var(--accent-soft);
+      padding: 4px 10px;
       font-size: 0.78rem;
-      color: var(--accent);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      border: 1px solid rgba(148, 163, 184, 0.32);
+      background: rgba(191,219,254,0.7);
+      color: #1d4ed8;
     }
 
-    .pill-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent);
+    [data-theme="dark"] .chip {
+      background: rgba(30,64,175,0.8);
+      color: #e5f0ff;
     }
 
     .avatar-wrapper {
@@ -266,56 +294,57 @@
     }
 
     .avatar-card {
-      border-radius: 28px;
-      padding: 14px;
-      border: 1px solid var(--border-subtle);
-      background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.18), rgba(15, 23, 42, 0.95));
-      backdrop-filter: blur(22px);
       max-width: 260px;
       width: 100%;
+      border-radius: 26px;
+      background: var(--surface-soft);
+      border: 1px solid rgba(148,163,184,0.28);
+      padding: 10px 10px 12px;
       display: flex;
       flex-direction: column;
-      align-items: center;
       gap: 8px;
-      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.7);
+      align-items: center;
     }
 
-    [data-theme="light"] .avatar-card {
-      background: linear-gradient(145deg, rgba(255,255,255,0.96), rgba(248,250,252,0.98));
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+    [data-theme="dark"] .avatar-card {
+      background: linear-gradient(145deg, #020617, #020617);
     }
 
     .avatar-card img {
       width: 100%;
-      max-width: 190px;
-      border-radius: 22px;
+      border-radius: 20px;
       object-fit: cover;
       aspect-ratio: 4 / 5;
-      border: 1px solid rgba(148, 163, 184, 0.55);
     }
 
     .avatar-caption {
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       color: var(--muted);
       text-align: center;
     }
 
+    /* ---------- Sections ---------- */
     .section {
-      margin-bottom: 26px;
+      padding: 16px 4px 4px;
+      border-top: 1px solid rgba(148,163,184,0.32);
+      margin-top: 10px;
+    }
+
+    .section:first-of-type {
+      border-top: none;
+      padding-top: 0;
     }
 
     .section h2 {
-      font-size: 1rem;
+      font-size: 1.02rem;
       font-weight: 600;
-      margin-bottom: 8px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
+      margin-bottom: 6px;
     }
 
     .section p {
       font-size: 0.95rem;
       margin-bottom: 6px;
+      color: var(--muted);
     }
 
     ul {
@@ -324,8 +353,8 @@
     }
 
     li {
-      margin-bottom: 8px;
-      font-size: 0.95rem;
+      margin-bottom: 6px;
+      font-size: 0.94rem;
     }
 
     a {
@@ -337,20 +366,31 @@
       text-decoration: underline;
     }
 
-    .section-separator {
-      border: none;
-      border-top: 1px solid rgba(148, 163, 184, 0.3);
-      margin: 22px 0;
+    .silent-link {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .silent-link:hover {
+      color: var(--accent);
+      text-decoration: underline;
     }
 
     .meta {
       font-size: 0.8rem;
-      color: var(--muted);
+      color: var(--muted-soft);
+      margin-top: 10px;
+    }
+
+    footer {
+      padding-top: 10px;
+      border-top: 1px solid rgba(148,163,184,0.32);
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="page">
+  <main class="shell">
     <nav class="nav">
       <div class="nav-left">
         <div class="brand-mark">SY</div>
@@ -369,18 +409,19 @@
         <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
           <span class="toggle-track">
             <span class="toggle-thumb"></span>
+            <span class="toggle-icon toggle-icon-sun">☼</span>
+            <span class="toggle-icon toggle-icon-moon">☾</span>
           </span>
-          <span class="toggle-label" data-theme-label>Light</span>
         </button>
       </div>
     </nav>
 
     <header id="about">
       <div>
-        <p class="tag">Founder · Trader · Research</p>
+        <p class="tagline">Founder · Trader · Research</p>
         <h1>Suki Yang</h1>
         <p class="subtitle">
-          Founder of Icon Trading and LMAO.
+          Founder of <strong><a href="https://icontrading.com" class="silent-link" target="_blank" rel="noreferrer">Icon Trading</a></strong> and <strong>LMAO</strong>.
         </p>
 
         <p class="intro">
@@ -392,16 +433,17 @@
           Previously: quant research at Pantera Capital, data science at Electric Capital.
         </p>
 
-        <div class="pill-list">
-          <span class="pill"><span class="pill-dot"></span> New York</span>
-          <span class="pill">Crypto trading</span>
-          <span class="pill">Market structure</span>
-          <span class="pill">Attention economy</span>
+        <div class="chips">
+          <span class="chip">New York</span>
+          <span class="chip">Crypto trading</span>
+          <span class="chip">Market structure</span>
+          <span class="chip">Attention economy</span>
         </div>
       </div>
 
       <div class="avatar-wrapper">
         <figure class="avatar-card">
+          <!-- avatar.jpg 放在仓库根目录 -->
           <img src="avatar.jpg" alt="Portrait of Suki Yang" />
           <figcaption class="avatar-caption">
             Suki Yang — founder of Icon Trading &amp; LMAO.
@@ -410,19 +452,17 @@
       </div>
     </header>
 
-    <hr class="section-separator" />
-
     <section id="work" class="section">
-      <h2>WORK</h2>
+      <h2>Work</h2>
       <ul>
         <li>
-          <strong><a href="https://icontrading.com" target="_blank" rel="noreferrer">Icon Trading</a></strong> — Founder &amp; CIO<br />
+          <strong><a href="https://icontrading.com" class="silent-link" target="_blank" rel="noreferrer">Icon Trading</a></strong> — Founder &amp; CIO<br />
           A quant trading firm operating across centralized and decentralized markets,
           with an emphasis on mid-frequency strategies and latency-aware infrastructure.
         </li>
 
         <li>
-          <strong><a href="https://lmao.fun" target="_blank" rel="noreferrer">LMAO</a></strong> — Founder<br />
+          <strong><a href="https://lmao.fun" class="silent-link" target="_blank" rel="noreferrer">LMAO</a></strong> — Founder<br />
           A publisher exchange helping new tokens and memecoins convert attention into liquidity.
         </li>
 
@@ -436,14 +476,14 @@
       </ul>
     </section>
 
-    <hr class="section-separator" />
-
     <section id="writing" class="section">
-      <h2>WRITING</h2>
+      <h2>Writing</h2>
       <ul>
         <li>
-          Longer notes on markets, incentives, and trading infrastructure on
-          <a href="https://medium.com/@sukiunderwood1" target="_blank" rel="noreferrer">Medium</a>.
+          Medium — longer notes on markets, incentives, and trading infrastructure<br />
+          <a href="https://medium.com/@sukiunderwood1" target="_blank" rel="noreferrer">
+            medium.com/@sukiunderwood1
+          </a>
         </li>
         <li>
           <a href="#" target="_blank" rel="noreferrer">
@@ -458,41 +498,39 @@
       </ul>
     </section>
 
-    <hr class="section-separator" />
-
     <section id="media" class="section">
-      <h2>MEDIA &amp; TALKS</h2>
+      <h2>Talks &amp; media</h2>
       <ul>
         <li>
           <strong>Bloomberg</strong> — interviewed on trading automation and Telegram liquidity<br />
           <a href="https://www.bloomberg.com/news/articles/2023-07-28/crypto-defi-trading-bots-like-unibot-are-taking-over-telegram?embedded-checkout=true"
-             target="_blank" rel="noreferrer">Read on Bloomberg</a>
+             target="_blank" rel="noreferrer">Bloomberg article</a>
         </li>
 
         <li>
           <strong>Unchained</strong> — market commentary &amp; memecoin behavior<br />
           <a href="https://unchainedcrypto.com/bitcoin-price-rebounds-to-just-under-60000-erasing-mondays-selloff/"
-             target="_blank" rel="noreferrer">Bitcoin price rebounds</a><br />
+             target="_blank" rel="noreferrer">Unchained #1</a><br />
           <a href="https://unchainedcrypto.com/eth-held-in-exchange-reserves-drops-to-8-year-low-with-etfs-set-to-begin-trading/"
-             target="_blank" rel="noreferrer">ETH exchange reserves at 8-year low</a><br />
+             target="_blank" rel="noreferrer">Unchained #2</a><br />
           <a href="https://unchainedcrypto.com/chill-guy-meme-shows-tiktoks-growing-role-in-fueling-rise-of-memecoins/"
-             target="_blank" rel="noreferrer">Chill Guy &amp; TikTok memecoins</a><br />
+             target="_blank" rel="noreferrer">Unchained #3</a><br />
           <a href="https://unchainedcrypto.com/bonk-near-all-time-high-as-24-hour-volume-on-coinbase-exceeds-that-for-xrp-sol-and-ada/"
-             target="_blank" rel="noreferrer">BONK and Coinbase volumes</a>
+             target="_blank" rel="noreferrer">Unchained #4</a>
         </li>
 
         <li>
           <strong>Binance Square</strong> — commentary referenced<br />
           <a href="https://www.binance.com/en/square/post/12874232696505"
-             target="_blank" rel="noreferrer">Binance Square feature #1</a><br />
+             target="_blank" rel="noreferrer">Binance #1</a><br />
           <a href="https://www.binance.com/en/square/post/13173444483649"
-             target="_blank" rel="noreferrer">Binance Square feature #2</a>
+             target="_blank" rel="noreferrer">Binance #2</a>
         </li>
 
         <li>
           <strong>Sherwood</strong> — cited in market coverage<br />
           <a href="https://sherwood.news/crypto/dogecoin-races-up-as-crypto-market-rallies/"
-             target="_blank" rel="noreferrer">Sherwood coverage</a>
+             target="_blank" rel="noreferrer">Sherwood</a>
         </li>
 
         <li>
@@ -507,27 +545,25 @@
       </ul>
     </section>
 
-    <hr class="section-separator" />
-
     <section id="projects" class="section">
-      <h2>PROJECTS</h2>
+      <h2>Projects</h2>
       <ul>
         <li>
-          <strong><a href="https://dm.cash" target="_blank" rel="noreferrer">dm.cash</a></strong> — tools for creators &amp; communities.
+          <strong>dm.cash</strong> — tools for creators &amp; communities<br />
+          <a href="https://dm.cash" target="_blank" rel="noreferrer">dm.cash</a>
         </li>
         <li>
-          <strong><a href="https://lmao.fun" target="_blank" rel="noreferrer">LMAO</a></strong> — publisher exchange for the attention economy.
+          <strong>LMAO</strong> — publisher exchange<br />
+          <a href="https://lmao.fun" target="_blank" rel="noreferrer">lmao.fun</a>
         </li>
         <li>
-          <strong>Suki Chat</strong> — conversations with founders &amp; traders (YouTube).
+          <strong>Suki Chat</strong> — conversations with founders &amp; traders (YouTube)
         </li>
       </ul>
     </section>
 
-    <hr class="section-separator" />
-
     <section id="contact" class="section">
-      <h2>CONTACT</h2>
+      <h2>Contact</h2>
       <ul>
         <li>Email: <a href="mailto:suki@sukiyang.com">suki@sukiyang.com</a></li>
         <li>Twitter: <a href="https://twitter.com/tradergirlsuki" target="_blank" rel="noreferrer">@tradergirlsuki</a></li>
@@ -535,40 +571,36 @@
       </ul>
     </section>
 
-    <hr class="section-separator" />
     <footer>
       <p class="meta">Last updated: November 2025.</p>
     </footer>
-  </div>
+  </main>
 
   <script>
+    // Initial theme
     (function () {
-      const stored = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const initial = stored || (prefersDark ? "dark" : "light");
-      document.documentElement.setAttribute("data-theme", initial);
+      try {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const initial = stored || (prefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", initial);
+      } catch (e) {}
     })();
 
+    // Toggle handler
     document.addEventListener("DOMContentLoaded", function () {
       const toggle = document.querySelector("[data-theme-toggle]");
-      const label = document.querySelector("[data-theme-label]");
-      if (!toggle || !label) return;
-
-      function updateLabel() {
-        const theme = document.documentElement.getAttribute("data-theme") || "light";
-        label.textContent = theme === "dark" ? "Dark" : "Light";
-      }
+      if (!toggle) return;
 
       toggle.addEventListener("click", function () {
         const current = document.documentElement.getAttribute("data-theme") || "light";
         const next = current === "dark" ? "light" : "dark";
         document.documentElement.setAttribute("data-theme", next);
-        localStorage.setItem("theme", next);
-        updateLabel();
+        try {
+          localStorage.setItem("theme", next);
+        } catch (e) {}
       });
-
-      updateLabel();
     });
   </script>
 </body>
