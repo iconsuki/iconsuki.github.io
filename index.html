@@ -22,7 +22,6 @@
   <meta name="twitter:image" content="https://iconsuki.github.io/og-image.png" />
 
   <style>
-    /* Reset */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -32,9 +31,8 @@
       height: 100%;
     }
 
-    /* Design tokens */
     :root {
-      --page-bg: #edf3ff;          /* 浅蓝色背景 */
+      --page-bg: #edf3ff;   /* very light blue */
       --card-bg: #ffffff;
       --card-bg-soft: #f9fafb;
       --border-subtle: #e2e8f0;
@@ -46,9 +44,9 @@
       --accent: #2563eb;
       --accent-soft: #dbeafe;
 
-      --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.10);
+      --shadow-hero: 0 16px 40px rgba(15, 23, 42, 0.16);
+
       --radius-lg: 20px;
-      --radius-md: 12px;
       --max-width: 840px;
 
       --font-sans: system-ui, -apple-system, BlinkMacSystemFont,
@@ -68,7 +66,7 @@
       --accent: #60a5fa;
       --accent-soft: #1d4ed8;
 
-      --shadow-soft: 0 18px 55px rgba(0, 0, 0, 0.7);
+      --shadow-hero: 0 22px 60px rgba(0, 0, 0, 0.8);
     }
 
     body {
@@ -84,20 +82,11 @@
     .page {
       max-width: var(--max-width);
       width: 100%;
-      background: var(--card-bg);
-      border-radius: 28px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border-subtle);
-      padding: 22px 24px 26px;
     }
 
     @media (max-width: 768px) {
       body {
-        padding: 16px;
-      }
-      .page {
-        border-radius: 20px;
-        padding: 18px 16px 22px;
+        padding: 20px 14px 28px;
       }
     }
 
@@ -106,7 +95,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       gap: 16px;
     }
     .nav-left {
@@ -124,7 +113,7 @@
       justify-content: center;
       font-size: 0.8rem;
       font-weight: 600;
-      background: var(--card-bg-soft);
+      background: rgba(255,255,255,0.9);
     }
     .nav-name {
       font-size: 0.96rem;
@@ -198,13 +187,14 @@
       opacity: 1;
     }
 
-    /* Hero */
+    /* Hero card only */
     header {
       margin-bottom: 26px;
       padding: 20px 18px 18px;
       border-radius: var(--radius-lg);
       background: var(--card-bg-soft);
       border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-hero);
       display: grid;
       grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
       gap: 18px;
@@ -280,9 +270,9 @@
       text-align: center;
     }
 
-    /* Sections */
+    /* Content sections – no big box */
     .section {
-      padding: 16px 2px 4px;
+      padding: 18px 2px 6px;
       border-top: 1px solid var(--border-subtle);
       margin-top: 10px;
     }
@@ -329,7 +319,7 @@
     footer {
       padding-top: 10px;
       border-top: 1px solid var(--border-subtle);
-      margin-top: 12px;
+      margin-top: 14px;
     }
     .meta {
       font-size: 0.8rem;
@@ -524,7 +514,6 @@
   </main>
 
   <script>
-    // initial theme
     (function () {
       try {
         const stored = localStorage.getItem("theme");
@@ -535,7 +524,6 @@
       } catch (e) {}
     })();
 
-    // toggle
     document.addEventListener("DOMContentLoaded", function () {
       const toggle = document.querySelector("[data-theme-toggle]");
       if (!toggle) return;
