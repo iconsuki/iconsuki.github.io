@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="light">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <title>杨苏琪 | Suki Yang</title>
+  <title>Suki Yang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="杨苏琪个人网站 – Icon Trading 创始人兼CEO，专注于交易、基础设施与注意力经济的交汇领域。"
+    content="Personal site of Suki Yang – founder and CEO of Icon Trading, building at the intersection of trading, infrastructure, and the attention economy."
   />
 
   <!-- Open Graph / Twitter preview -->
-  <meta property="og:title" content="杨苏琪 | Suki Yang" />
-  <meta property="og:description" content="Icon Trading 创始人兼CEO。专注于交易、基础设施与在线行为的系统构建。" />
+  <meta property="og:title" content="Suki Yang" />
+  <meta property="og:description" content="Founder & CEO of Icon Trading. Systems at the intersection of trading, infrastructure, and online behavior." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://iconsuki.github.io/cn/" />
+  <meta property="og:url" content="https://iconsuki.github.io/" />
   <meta property="og:image" content="https://iconsuki.github.io/og-image.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="杨苏琪 | Suki Yang" />
-  <meta name="twitter:description" content="Icon Trading 创始人兼CEO。专注于交易、基础设施与在线行为的系统构建。" />
+  <meta name="twitter:title" content="Suki Yang" />
+  <meta name="twitter:description" content="Founder & CEO of Icon Trading and LMAO. Systems at the intersection of trading, infrastructure, and online behavior." />
   <meta name="twitter:image" content="https://iconsuki.github.io/og-image.png" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after {
@@ -75,9 +75,8 @@
       --radius-sm: 12px;
       --max-width: 920px;
 
-      --font-display: 'Noto Serif SC', 'Cormorant Garamond', Georgia, serif;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-sans: 'DM Sans', system-ui, sans-serif;
-      --font-cn: 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', serif;
     }
 
     [data-theme="dark"] {
@@ -108,7 +107,7 @@
       font-family: var(--font-sans);
       background: var(--page-bg);
       color: var(--text);
-      line-height: 1.8;
+      line-height: 1.7;
       display: flex;
       justify-content: center;
       padding: 0;
@@ -189,7 +188,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-family: var(--font-display);
       font-size: 1.5rem;
       font-weight: 700;
       font-style: italic;
@@ -281,10 +280,11 @@
     }
 
     .nav-name {
-      font-family: var(--font-cn);
+      font-family: var(--font-display);
       font-size: 1.1rem;
       font-weight: 500;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       color: var(--muted);
     }
 
@@ -488,10 +488,10 @@
     }
 
     h1 {
-      font-family: var(--font-cn);
-      font-size: clamp(2.4rem, 4vw + 1.2rem, 3.2rem);
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 4vw + 1.5rem, 3.8rem);
       font-weight: 600;
-      letter-spacing: 0.05em;
+      letter-spacing: -0.01em;
       margin-bottom: 8px;
       background: linear-gradient(135deg, var(--text) 0%, var(--royal-blue) 100%);
       -webkit-background-clip: text;
@@ -506,7 +506,6 @@
     }
 
     .subtitle {
-      font-family: var(--font-cn);
       font-size: 1.1rem;
       color: var(--muted);
       margin-bottom: 20px;
@@ -524,11 +523,10 @@
     }
 
     .intro {
-      font-family: var(--font-cn);
       font-size: 0.98rem;
       margin-bottom: 12px;
       color: var(--muted);
-      line-height: 1.9;
+      line-height: 1.8;
     }
 
     .chips {
@@ -601,8 +599,9 @@
     }
 
     .avatar-caption {
-      font-family: var(--font-cn);
+      font-family: var(--font-display);
       font-size: 0.85rem;
+      font-style: italic;
       color: var(--muted);
       text-align: center;
     }
@@ -640,7 +639,7 @@
     }
 
     .section h2 {
-      font-family: var(--font-cn);
+      font-family: var(--font-display);
       font-size: 1.35rem;
       font-weight: 600;
       margin-bottom: 16px;
@@ -659,7 +658,6 @@
     }
 
     .section p {
-      font-family: var(--font-cn);
       font-size: 0.95rem;
       margin-bottom: 8px;
       color: var(--muted);
@@ -681,7 +679,7 @@
       content: '';
       position: absolute;
       left: 0;
-      top: 12px;
+      top: 10px;
       width: 4px;
       height: 4px;
       background: var(--gold);
@@ -788,18 +786,18 @@
     <nav class="nav">
       <div class="nav-left">
         <div class="brand-mark"><span class="brand-mark-inner">SY</span></div>
-        <div class="nav-name">杨苏琪</div>
+        <div class="nav-name">Suki Yang</div>
       </div>
       <div class="nav-links">
-        <a href="#about">关于</a>
-        <a href="#work">工作</a>
-        <a href="#writing">文章</a>
-        <a href="#media">媒体</a>
-        <a href="#contact">联系</a>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#writing">Writing</a>
+        <a href="#media">Media</a>
+        <a href="#contact">Contact</a>
         <span class="nav-divider"></span>
-        <a href="../">EN</a>
-        <a href="./">中文</a>
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换深色模式">
+        <a href="/">EN</a>
+        <a href="/cn/">中文</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
           <span class="toggle-track">
             <span class="toggle-thumb"></span>
             <span class="toggle-icon toggle-icon-sun">☀</span>
@@ -811,107 +809,108 @@
 
     <header id="about">
       <div>
-        <p class="tagline">创始人 · CEO · 量化</p>
-        <h1>杨苏琪</h1>
-        <p class="subtitle">
-          <strong><a href="https://icontrading.com" target="_blank" rel="noreferrer">Icon Trading</a></strong> 创始人兼CEO
+        <p class="tagline">Founder · CEO · Quant</p>
+        <h1>Suki Yang</h1>
+ <strong><a href="https://icontrading.com" target="_blank" rel="noreferrer">Icon Trading</a></strong> and <strong><a href="https://lmao.fun" target="_blank" rel="noreferrer">LMAO</a></strong>.
         </p>
 
         <p class="intro">
-          我专注于构建交易、基础设施与在线行为交汇领域的系统。我的工作核心是研究资本如何在市场中流动，以及注意力如何塑造流动性。
+          I build systems at the intersection of trading, infrastructure, and online behavior.
+          My work focuses on how capital flows through markets and how attention shapes liquidity.
         </p>
 
         <p class="intro">
-          此前：<a href="https://panteracapital.com" target="_blank" rel="noreferrer">Pantera Capital</a> 量化研究员，<a href="https://electriccapital.com" target="_blank" rel="noreferrer">Electric Capital</a> 数据科学家。加州大学伯克利分校哈斯商学院金融工程硕士。
+          Previously: quant research at <a href="https://panteracapital.com" target="_blank" rel="noreferrer">Pantera Capital</a>, data science at <a href="https://electriccapital.com" target="_blank" rel="noreferrer">Electric Capital</a>. MFE from UC Berkeley Haas.
         </p>
 
         <div class="chips">
-          <span class="chip">纽约</span>
-          <span class="chip">加密货币交易</span>
-          <span class="chip">市场结构</span>
-          <span class="chip">注意力经济</span>
+          <span class="chip">New York</span>
+          <span class="chip">Crypto trading</span>
+          <span class="chip">Market structure</span>
+          <span class="chip">Attention economy</span>
         </div>
       </div>
 
       <div class="avatar-wrapper">
         <figure class="avatar-card">
-          <img src="../avatar.jpg" alt="杨苏琪照片" />
+          <img src="avatar.jpg" alt="Portrait of Suki Yang" />
           <figcaption class="avatar-caption">
-            杨苏琪 — Icon Trading 创始人兼CEO
+            Suki Yang — Founder &amp; CEO, Icon Trading
           </figcaption>
         </figure>
       </div>
     </header>
 
     <section id="work" class="section">
-      <h2>工作经历</h2>
+      <h2>Work</h2>
       <ul>
         <li>
-          <strong><a href="https://icontrading.com" target="_blank" rel="noreferrer">Icon Trading</a></strong> — 创始人兼CEO<br />
-          一家量化交易公司，业务覆盖中心化和去中心化市场，专注于中频策略和延迟敏感型基础设施。
+          <strong><a href="https://icontrading.com" target="_blank" rel="noreferrer">Icon Trading</a></strong> — Founder &amp; CEO<br />
+          A quant trading firm operating across centralized and decentralized markets,
+          with an emphasis on mid-frequency strategies and latency-aware infrastructure.
         </li>
 
         <li>
-          <strong><a href="https://lmao.fun" target="_blank" rel="noreferrer">LMAO</a></strong> — 创始人<br />
-          一个出版商交易所，帮助新代币和 meme 币将注意力转化为流动性。
+          <strong><a href="https://lmao.fun" target="_blank" rel="noreferrer">LMAO</a></strong> — Founder<br />
+          A publisher exchange helping new tokens and memecoins convert attention into liquidity.
         </li>
 
         <li>
-          <strong><a href="https://panteracapital.com" target="_blank" rel="noreferrer">Pantera Capital</a></strong> — 量化研究员<br />
-          在投资团队开发加密货币流动性代币投资策略。
+          <strong><a href="https://panteracapital.com" target="_blank" rel="noreferrer">Pantera Capital</a></strong> — Quant Research<br />
+          Developed crypto liquid token investing strategies on the investment team.
         </li>
 
         <li>
-          <strong><a href="https://electriccapital.com" target="_blank" rel="noreferrer">Electric Capital</a></strong> — 数据科学家<br />
-          为加密货币风险投资提供数据分析支持。
+          <strong><a href="https://electriccapital.com" target="_blank" rel="noreferrer">Electric Capital</a></strong> — Data Science<br />
+          Data analysis for crypto-focused venture investments.
         </li>
       </ul>
     </section>
 
     <section id="writing" class="section">
-      <h2>文章</h2>
+      <h2>Writing</h2>
       <ul>
         <li>
-          Medium — 关于市场、激励机制和交易基础设施的深度笔记<br />
+          Medium — longer notes on markets, incentives, and trading infrastructure<br />
           <a href="https://medium.com/@sukiunderwood1" target="_blank" rel="noreferrer">
             medium.com/@sukiunderwood1
           </a>
         </li>
         <li>
           <a href="https://medium.com/@sukiunderwood1/crypto-trading-systematic-d159000b1c21" target="_blank" rel="noreferrer">
-            Crypto Trading, Systematic — 加密货币算法交易的工作原理
+            Crypto Trading, Systematic — how algorithmic trading works in crypto
           </a>
         </li>
         <li>
           <a href="#" target="_blank" rel="noreferrer">
-            从点赞到流动性：将社交注意力转化为可预测的资金流
+            From likes to liquidity: converting social attention into predictable flows
           </a>
         </li>
       </ul>
     </section>
 
     <section id="media" class="section">
-      <h2>演讲与媒体</h2>
+      <h2>Talks &amp; Media</h2>
       <ul>
         <li>
-          <strong><a href="https://ethcc.io/speakers/suki-yang" target="_blank" rel="noreferrer">EthCC[9]</a></strong> — 演讲嘉宾，2026年3月 <span class="featured-badge">即将举行</span><br />
-          "加密货币中的高频交易" — 深入探讨做市商和套利者如何保持 DeFi 市场的效率、7年系统构建经验总结，以及这对 ETH 作为金融基础设施的意义。
+          <strong><a href="https://ethcc.io/speakers/suki-yang" target="_blank" rel="noreferrer">EthCC[9]</a></strong> — Speaker, March 2026 <span class="featured-badge">Upcoming</span><br />
+          "High-Frequency Trading in Crypto" — an applied look at how market makers and arbitrageurs keep DeFi markets efficient, lessons from 7 years of building systems, and what this means for ETH as financial infrastructure.
         </li>
 
         <li>
-          <strong>CryptoNews</strong> — 专题采访<br />
+          <strong>CryptoNews</strong> — Featured Interview<br />
           <a href="https://cryptonews.com/exclusives/from-quant-to-ceo-suki-yang-on-building-a-trading-machine-for-institutional-crypto/"
-             target="_blank" rel="noreferrer">从量化到CEO：为机构加密货币构建交易机器</a>
+             target="_blank" rel="noreferrer">From Quant to CEO: Building a Trading Machine for Institutional Crypto</a>
         </li>
 
         <li>
-          <strong>彭博社</strong> — 关于交易自动化和 Telegram 流动性的采访<br />
+          <strong>Bloomberg</strong> — interviewed on trading automation and Telegram liquidity<br />
           <a href="https://www.bloomberg.com/news/articles/2023-07-28/crypto-defi-trading-bots-like-unibot-are-taking-over-telegram?embedded-checkout=true"
-             target="_blank" rel="noreferrer">彭博社文章</a>
+             target="_blank" rel="noreferrer">Bloomberg article</a>
         </li>
 
         <li>
-          <strong>Unchained</strong> — 市场评论与 meme 币行为分析<br />
+          <strong>Unchained</strong> — market commentary &amp; memecoin behavior<br />
           <a href="https://unchainedcrypto.com/bitcoin-price-rebounds-to-just-under-60000-erasing-mondays-selloff/"
              target="_blank" rel="noreferrer">Unchained #1</a> · 
           <a href="https://unchainedcrypto.com/eth-held-in-exchange-reserves-drops-to-8-year-low-with-etfs-set-to-begin-trading/"
@@ -923,9 +922,9 @@
         </li>
 
         <li>
-          <strong>币安广场</strong> — 评论引用<br />
+          <strong>Binance Square</strong> — commentary referenced<br />
           <a href="https://www.binance.com/en/square/post/12874232696505"
-             target="_blank" rel="noreferrer">币安 #1</a> · 
+             target="_blank" rel="noreferrer">Binance #1</a> · 
           <a href="https://www.binance.com/en/square/post/13173444483649"
              target="_blank" rel="noreferrer">#2</a> · 
           <a href="https://www.binance.com/en/square/post/01-20-2026-icon-trading-ceo-35339327638641"
@@ -933,34 +932,34 @@
         </li>
 
         <li>
-          <strong>Sherwood</strong> — 市场报道引用<br />
+          <strong>Sherwood</strong> — cited in market coverage<br />
           <a href="https://sherwood.news/crypto/dogecoin-races-up-as-crypto-market-rallies/"
              target="_blank" rel="noreferrer">Sherwood</a>
         </li>
 
         <li>
-          <strong>播客采访</strong><br />
+          <strong>Podcast interviews</strong><br />
           <a href="https://www.youtube.com/watch?v=xoFswmQtN9Q"
-             target="_blank" rel="noreferrer">YouTube 采访</a>
+             target="_blank" rel="noreferrer">YouTube interview</a>
         </li>
       </ul>
     </section>
 
     <section id="contact" class="section">
-      <h2>联系方式</h2>
+      <h2>Contact</h2>
       <ul>
-        <li>邮箱：<a href="mailto:suki@sukiyang.com">suki@sukiyang.com</a></li>
-        <li>Twitter：<a href="https://twitter.com/tradergirlsuki" target="_blank" rel="noreferrer">@tradergirlsuki</a></li>
-        <li>领英：<a href="https://linkedin.com/in/sukiyang" target="_blank" rel="noreferrer">linkedin.com/in/sukiyang</a></li>
+        <li>Email: <a href="/cdn-cgi/l/email-protection#087b7d6361487b7d63617169666f266b6765"><span class="__cf_email__" data-cfemail="ddaea8b6b49daea8b6b4a4bcb3baf3beb2b0">[email&#160;protected]</span></a></li>
+        <li>Twitter: <a href="https://twitter.com/tradergirlsuki" target="_blank" rel="noreferrer">@tradergirlsuki</a></li>
+        <li>LinkedIn: <a href="https://linkedin.com/in/sukiyang" target="_blank" rel="noreferrer">linkedin.com/in/sukiyang</a></li>
       </ul>
     </section>
 
     <footer>
-      <p class="meta">最后更新：2026年1月</p>
+      <p class="meta">Last updated: January 2026.</p>
     </footer>
   </main>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     (function () {
       try {
         const stored = localStorage.getItem("theme");
@@ -977,13 +976,4 @@
 
       toggle.addEventListener("click", function () {
         const current = document.documentElement.getAttribute("data-theme") || "light";
-        const next = current === "dark" ? "light" : "dark";
-        document.documentElement.setAttribute("data-theme", next);
-        try {
-          localStorage.setItem("theme", next);
-        } catch (e) {}
-      });
-    });
-  </script>
-</body>
-</html>
+        const next
