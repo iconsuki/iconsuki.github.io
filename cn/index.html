@@ -1,989 +1,257 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="light">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>杨苏琪 | Suki Yang</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="杨苏琪个人网站 – Icon Trading 创始人兼CEO，专注于交易、基础设施与注意力经济的交汇领域。"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="杨苏琪，Icon Trading 创始人兼 CEO。Icon Trading 是一家位于纽约的加密货币量化交易公司。她写市场、野心，以及那些被我们误认为是自己选择的系统。">
+  <link rel="canonical" href="https://sukiyang.com/cn/">
+  <link rel="alternate" hreflang="en" href="https://sukiyang.com/">
+  <link rel="alternate" hreflang="zh-CN" href="https://sukiyang.com/cn/">
 
-  <!-- Open Graph / Twitter preview -->
-  <meta property="og:title" content="杨苏琪 | Suki Yang" />
-  <meta property="og:description" content="Icon Trading 创始人兼CEO。专注于交易、基础设施与在线行为的系统构建。" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://iconsuki.github.io/cn/" />
-  <meta property="og:image" content="https://iconsuki.github.io/og-image.png" />
+  <!-- Link previews -->
+  <meta property="og:title" content="杨苏琪 | Suki Yang">
+  <meta property="og:description" content="Icon Trading 创始人兼 CEO。写市场、野心，以及那些被我们误认为是自己选择的系统。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sukiyang.com/cn/">
+  <meta property="og:image" content="https://sukiyang.com/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="杨苏琪 | Suki Yang">
+  <meta name="twitter:description" content="Icon Trading 创始人兼 CEO。写市场、野心，以及那些被我们误认为是自己选择的系统。">
+  <meta name="twitter:image" content="https://sukiyang.com/og.jpg">
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="杨苏琪 | Suki Yang" />
-  <meta name="twitter:description" content="Icon Trading 创始人兼CEO。专注于交易、基础设施与在线行为的系统构建。" />
-  <meta name="twitter:image" content="https://iconsuki.github.io/og-image.png" />
-
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=Newsreader&family=Noto+Serif+SC:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-    html, body {
-      min-height: 100%;
-    }
-
-    :root {
-      --royal-blue: #1e3a8a;
-      --royal-blue-light: #3b5998;
-      --royal-blue-dark: #172554;
-      --royal-blue-bright: #2563eb;
-      --gold: #c9a962;
-      --gold-light: #e8d5a3;
-      --gold-soft: rgba(201, 169, 98, 0.15);
-
-      --page-bg: #faf9f7;
-      --card-bg: #ffffff;
-      --card-bg-soft: rgba(255, 255, 255, 0.7);
-      --border-subtle: rgba(30, 58, 138, 0.1);
-      --border-gold: rgba(201, 169, 98, 0.3);
-
-      --text: #1a1a2e;
-      --muted: #5a5a72;
-      --muted-soft: #8a8aa0;
-
-      --accent: var(--royal-blue);
-      --accent-soft: rgba(30, 58, 138, 0.08);
-
-      --shadow-hero: 
-        0 4px 6px rgba(30, 58, 138, 0.03),
-        0 12px 24px rgba(30, 58, 138, 0.06),
-        0 24px 48px rgba(30, 58, 138, 0.08);
-      --shadow-card:
-        0 2px 4px rgba(0, 0, 0, 0.02),
-        0 8px 16px rgba(30, 58, 138, 0.04);
-      --shadow-glow: 0 0 60px rgba(30, 58, 138, 0.12);
-
-      --radius-lg: 24px;
-      --radius-md: 16px;
-      --radius-sm: 12px;
-      --max-width: 920px;
-
-      --font-display: 'Noto Serif SC', 'Cormorant Garamond', Georgia, serif;
-      --font-sans: 'DM Sans', system-ui, sans-serif;
-      --font-cn: 'Noto Serif SC', 'PingFang SC', 'Microsoft YaHei', serif;
-    }
-
-    [data-theme="dark"] {
-      --page-bg: #0a0a14;
-      --card-bg: #12121f;
-      --card-bg-soft: rgba(18, 18, 31, 0.9);
-      --border-subtle: rgba(201, 169, 98, 0.15);
-      --border-gold: rgba(201, 169, 98, 0.25);
-
-      --text: #f0f0f5;
-      --muted: #a0a0b8;
-      --muted-soft: #6a6a80;
-
-      --accent: #5b7fc9;
-      --accent-soft: rgba(91, 127, 201, 0.15);
-
-      --shadow-hero: 
-        0 4px 6px rgba(0, 0, 0, 0.2),
-        0 12px 24px rgba(0, 0, 0, 0.25),
-        0 24px 48px rgba(0, 0, 0, 0.3);
-      --shadow-card:
-        0 2px 4px rgba(0, 0, 0, 0.15),
-        0 8px 16px rgba(0, 0, 0, 0.2);
-      --shadow-glow: 0 0 80px rgba(201, 169, 98, 0.08);
-    }
-
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     body {
-      font-family: var(--font-sans);
-      background: var(--page-bg);
-      color: var(--text);
-      line-height: 1.8;
-      display: flex;
-      justify-content: center;
-      padding: 0;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    /* Animated background */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(ellipse 80% 50% at 20% 20%, rgba(30, 58, 138, 0.04) 0%, transparent 50%),
-        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(201, 169, 98, 0.03) 0%, transparent 50%),
-        radial-gradient(ellipse 40% 60% at 50% 50%, rgba(30, 58, 138, 0.02) 0%, transparent 60%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    [data-theme="dark"] body::before {
-      background: 
-        radial-gradient(ellipse 80% 50% at 20% 20%, rgba(91, 127, 201, 0.06) 0%, transparent 50%),
-        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(201, 169, 98, 0.04) 0%, transparent 50%),
-        radial-gradient(ellipse 40% 60% at 50% 50%, rgba(91, 127, 201, 0.03) 0%, transparent 60%);
-    }
-
-    .page {
-      max-width: var(--max-width);
-      width: 100%;
-      position: relative;
-      z-index: 1;
-      padding: 40px 24px 60px;
-    }
-
-    @media (max-width: 768px) {
-      .page {
-        padding: 24px 16px 40px;
-      }
-    }
-
-    /* Nav */
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 32px;
-      gap: 20px;
-      padding: 16px 0;
-      animation: fadeInDown 0.8s ease-out;
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    /* Enhanced Royal Blue Logo */
-    .brand-mark {
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      font-style: italic;
-      letter-spacing: 0.03em;
-      color: #fff;
-      background: 
-        linear-gradient(145deg, var(--royal-blue-bright) 0%, var(--royal-blue) 40%, var(--royal-blue-dark) 100%);
-      box-shadow: 
-        0 8px 24px rgba(30, 58, 138, 0.4),
-        0 4px 8px rgba(30, 58, 138, 0.3),
-        inset 0 2px 0 rgba(255, 255, 255, 0.15),
-        inset 0 -2px 0 rgba(0, 0, 0, 0.1);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-      cursor: default;
-    }
-
-    /* Shimmer effect */
-    .brand-mark::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(
-        135deg,
-        transparent 30%,
-        rgba(255, 255, 255, 0.15) 50%,
-        transparent 70%
-      );
-      transform: rotate(45deg);
-      animation: shimmer 3s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-      0%, 100% { transform: translateX(-100%) rotate(45deg); }
-      50% { transform: translateX(100%) rotate(45deg); }
-    }
-
-    /* Gold accent bar */
-    .brand-mark::after {
-      content: '';
-      position: absolute;
-      bottom: 4px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 70%;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
-      border-radius: 2px;
-      opacity: 0.9;
-    }
-
-    /* Inner glow ring */
-    .brand-mark-inner {
-      position: relative;
-      z-index: 2;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .brand-mark:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 
-        0 12px 32px rgba(30, 58, 138, 0.5),
-        0 6px 12px rgba(30, 58, 138, 0.35),
-        inset 0 2px 0 rgba(255, 255, 255, 0.2),
-        inset 0 -2px 0 rgba(0, 0, 0, 0.1),
-        0 0 20px rgba(37, 99, 235, 0.3);
-    }
-
-    [data-theme="dark"] .brand-mark {
-      background: 
-        linear-gradient(145deg, #3b82f6 0%, var(--royal-blue) 40%, var(--royal-blue-dark) 100%);
-      box-shadow: 
-        0 8px 24px rgba(59, 130, 246, 0.35),
-        0 4px 8px rgba(0, 0, 0, 0.4),
-        inset 0 2px 0 rgba(255, 255, 255, 0.1),
-        inset 0 -2px 0 rgba(0, 0, 0, 0.2);
-    }
-
-    [data-theme="dark"] .brand-mark:hover {
-      box-shadow: 
-        0 12px 32px rgba(59, 130, 246, 0.45),
-        0 6px 12px rgba(0, 0, 0, 0.5),
-        inset 0 2px 0 rgba(255, 255, 255, 0.15),
-        0 0 30px rgba(59, 130, 246, 0.4);
-    }
-
-    .nav-name {
-      font-family: var(--font-cn);
-      font-size: 1.1rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font-size: 0.85rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--muted);
-      position: relative;
-      transition: color 0.3s ease;
-      padding: 4px 0;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: linear-gradient(90deg, var(--royal-blue), var(--gold));
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--royal-blue);
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .nav-divider {
-      width: 1px;
-      height: 18px;
-      background: linear-gradient(180deg, transparent, var(--border-gold), transparent);
-    }
-
-    /* Theme toggle */
-    .theme-toggle {
-      border: none;
-      background: none;
-      padding: 0;
-      cursor: pointer;
-    }
-
-    .toggle-track {
-      width: 48px;
-      height: 26px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--royal-blue-light), var(--royal-blue));
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 6px;
-      position: relative;
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
-      transition: background 0.3s ease;
-    }
-
-    [data-theme="dark"] .toggle-track {
-      background: linear-gradient(135deg, #2a2a40, #1a1a2e);
-    }
-
-    .toggle-thumb {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #fff, #f0f0f5);
-      box-shadow: 
-        0 2px 6px rgba(0, 0, 0, 0.25),
-        inset 0 1px 0 rgba(255, 255, 255, 0.5);
-      left: 3px;
-      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    [data-theme="dark"] .toggle-thumb {
-      transform: translateX(22px);
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    }
-
-    .toggle-icon {
-      font-size: 0.75rem;
-      opacity: 0.9;
-      z-index: 1;
-      color: #fff;
-    }
-
-    .toggle-icon-sun {
-      opacity: 0.9;
-    }
-
-    .toggle-icon-moon {
-      opacity: 0.5;
-    }
-
-    [data-theme="dark"] .toggle-icon-sun {
-      opacity: 0.5;
-    }
-
-    [data-theme="dark"] .toggle-icon-moon {
-      opacity: 0.9;
-      color: var(--gold);
-    }
-
-    /* Hero card */
-    header {
-      margin-bottom: 40px;
-      padding: 32px;
-      border-radius: var(--radius-lg);
-      background: var(--card-bg);
-      border: 1px solid var(--border-subtle);
-      box-shadow: var(--shadow-hero);
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 32px;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      animation: fadeInUp 0.8s ease-out 0.2s both;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Decorative corner accents */
-    header::before,
-    header::after {
-      content: '';
-      position: absolute;
-      width: 80px;
-      height: 80px;
-      pointer-events: none;
-    }
-
-    header::before {
-      top: -1px;
-      left: -1px;
-      border-top: 2px solid var(--gold);
-      border-left: 2px solid var(--gold);
-      border-top-left-radius: var(--radius-lg);
-      opacity: 0.5;
-    }
-
-    header::after {
-      bottom: -1px;
-      right: -1px;
-      border-bottom: 2px solid var(--royal-blue);
-      border-right: 2px solid var(--royal-blue);
-      border-bottom-right-radius: var(--radius-lg);
-      opacity: 0.3;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        grid-template-columns: minmax(0, 1fr);
-        padding: 24px 20px;
-        gap: 24px;
-      }
-    }
-
-    .tagline {
-      font-family: var(--font-sans);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .tagline::before,
-    .tagline::after {
-      content: '';
-      width: 24px;
-      height: 1px;
-      background: linear-gradient(90deg, var(--gold), transparent);
-    }
-
-    .tagline::after {
-      background: linear-gradient(90deg, transparent, var(--gold));
-    }
-
-    h1 {
-      font-family: var(--font-cn);
-      font-size: clamp(2.4rem, 4vw + 1.2rem, 3.2rem);
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      margin-bottom: 8px;
-      background: linear-gradient(135deg, var(--text) 0%, var(--royal-blue) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    [data-theme="dark"] h1 {
-      background: linear-gradient(135deg, var(--text) 0%, var(--gold-light) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
-
-    .subtitle {
-      font-family: var(--font-cn);
-      font-size: 1.1rem;
-      color: var(--muted);
-      margin-bottom: 20px;
-      font-weight: 400;
-    }
-
-    .subtitle strong a {
-      color: var(--royal-blue);
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    [data-theme="dark"] .subtitle strong a {
-      color: var(--gold);
-    }
-
-    .intro {
-      font-family: var(--font-cn);
-      font-size: 0.98rem;
-      margin-bottom: 12px;
-      color: var(--muted);
-      line-height: 1.9;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .chip {
-      border-radius: 999px;
-      padding: 6px 16px;
-      font-size: 0.78rem;
-      font-weight: 500;
-      background: var(--accent-soft);
-      color: var(--royal-blue);
-      border: 1px solid var(--border-subtle);
-      transition: all 0.3s ease;
-    }
-
-    [data-theme="dark"] .chip {
-      background: var(--gold-soft);
-      color: var(--gold);
-      border-color: var(--border-gold);
-    }
-
-    .chip:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
-    }
-
-    .avatar-wrapper {
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .avatar-card {
-      max-width: 260px;
-      width: 100%;
-      border-radius: var(--radius-md);
-      background: var(--card-bg-soft);
-      border: 1px solid var(--border-subtle);
-      padding: 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: center;
-      box-shadow: var(--shadow-card);
-      position: relative;
-    }
-
-    .avatar-card::before {
-      content: '';
-      position: absolute;
-      top: -1px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--royal-blue), transparent);
-      opacity: 0.4;
-    }
-
-    .avatar-card img {
-      width: 100%;
-      border-radius: var(--radius-sm);
-      object-fit: cover;
-      aspect-ratio: 4 / 5;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    }
-
-    .avatar-caption {
-      font-family: var(--font-cn);
-      font-size: 0.85rem;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    /* Content sections */
-    .section {
-      padding: 28px 0;
-      border-top: 1px solid var(--border-subtle);
-      position: relative;
-      animation: fadeInUp 0.6s ease-out both;
-    }
-
-    .section:nth-child(2) { animation-delay: 0.3s; }
-    .section:nth-child(3) { animation-delay: 0.4s; }
-    .section:nth-child(4) { animation-delay: 0.5s; }
-    .section:nth-child(5) { animation-delay: 0.6s; }
-
-    .section::before {
-      content: '';
-      position: absolute;
-      top: -1px;
-      left: 0;
-      width: 60px;
-      height: 1px;
-      background: linear-gradient(90deg, var(--gold), transparent);
-    }
-
-    .section:first-of-type {
-      border-top: none;
-      padding-top: 0;
-    }
-
-    .section:first-of-type::before {
-      display: none;
-    }
-
-    .section h2 {
-      font-family: var(--font-cn);
-      font-size: 1.35rem;
-      font-weight: 600;
-      margin-bottom: 16px;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .section h2::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, var(--border-subtle), transparent);
-      max-width: 100px;
-    }
-
-    .section p {
-      font-family: var(--font-cn);
-      font-size: 0.95rem;
-      margin-bottom: 8px;
-      color: var(--muted);
-    }
-
-    ul {
-      list-style: none;
-      margin-top: 8px;
-    }
-
-    li {
-      margin-bottom: 16px;
-      font-size: 0.94rem;
-      padding-left: 16px;
-      position: relative;
-    }
-
-    li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 12px;
-      width: 4px;
-      height: 4px;
-      background: var(--gold);
-      border-radius: 50%;
-    }
-
-    li strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    a {
-      color: var(--royal-blue);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    [data-theme="dark"] a {
-      color: var(--gold);
-    }
-
-    a:hover {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .silent-link {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .silent-link:hover {
-      color: var(--royal-blue);
-      text-decoration: underline;
-    }
-
-    [data-theme="dark"] .silent-link:hover {
-      color: var(--gold);
-    }
-
-    footer {
-      padding-top: 20px;
-      border-top: 1px solid var(--border-subtle);
-      margin-top: 20px;
-      position: relative;
-    }
-
-    footer::before {
-      content: '';
-      position: absolute;
-      top: -1px;
-      right: 0;
-      width: 60px;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--royal-blue));
-      opacity: 0.4;
-    }
-
-    .meta {
-      font-size: 0.8rem;
-      color: var(--muted-soft);
-      font-style: italic;
-    }
-
-    /* Featured badge */
-    .featured-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--gold);
-      background: var(--gold-soft);
-      padding: 3px 10px;
-      border-radius: 4px;
-      margin-left: 8px;
-      border: 1px solid var(--border-gold);
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-      
-      .nav-links {
-        gap: 12px;
-        justify-content: flex-start;
-      }
-
-      .tagline::before,
-      .tagline::after {
-        width: 12px;
-      }
-    }
+      margin: 0;
+      background: #F4F6F8;
+      color: #141B24;
+      font-family: 'Instrument Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    :focus-visible { outline: 2px solid #141B24; outline-offset: 3px; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+    .serif { font-family: 'Newsreader', 'Noto Serif SC', 'Songti SC', 'SimSun', serif; font-weight: 400; }
+
+    /* Header */
+    .top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 32px; padding: 20px 0; }
+    .brand { display: inline-flex; align-items: center; min-height: 44px; font-size: 21px; text-decoration: none; }
+    .top nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0 28px; }
+    .top nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; text-decoration: none; }
+    .top nav a.lang { color: #4F5A68; }
+    .brand:hover, .top nav a:hover { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 1px; }
+    @media (max-width: 480px) { .top nav { gap: 0 20px; } }
+
+    /* Hero */
+    .hero { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 32px 56px; padding: 56px 0 80px; }
+    .portrait { flex: 0 0 200px; }
+    .portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; background: #DCE2E9; }
+    .intro { flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+    h1 { margin: -6px 0 0; font-size: clamp(44px, 6vw, 68px); letter-spacing: 0.02em; line-height: 1.15; }
+    .lead { margin: 0; max-width: 560px; font-size: 20px; line-height: 34px; text-wrap: balance; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 28px; padding-top: 4px; }
+    .btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; background: #2A3FD0; color: #FFFFFF; font-weight: 500; text-decoration: none; }
+    .btn:hover { background: #2233B0; }
+    .link { display: inline-flex; align-items: center; min-height: 44px; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+    .link:hover { text-decoration-thickness: 2px; }
+    .accent { font-weight: 500; color: #2A3FD0; }
+
+    /* Sections */
+    .block { display: flex; flex-wrap: wrap; gap: 8px 56px; padding: 24px 0 72px; border-top: 1px solid #D3DAE2; }
+    .block > h2 { flex: 0 0 200px; margin: 0; font-size: 24px; line-height: 34px; }
+    .block > .body { flex: 1 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 28px; }
+    .block > .body.close { gap: 8px; }
+    .block.last { padding-bottom: 56px; }
+
+    /* Lists */
+    .list { display: flex; flex-direction: column; gap: 18px; margin: 0; }
+    .row { display: flex; flex-wrap: wrap; gap: 0 24px; padding-bottom: 18px; border-bottom: 1px solid #D3DAE2; text-decoration: none; }
+    .meta { flex: 0 0 140px; margin: 0; font-size: 14px; line-height: 27px; color: #4F5A68; }
+    .main { flex: 1 1 280px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 2px; }
+    .t { font-weight: 500; }
+    a.row:hover .t { text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px; }
+    .d { max-width: 520px; color: #4F5A68; text-wrap: balance; }
+    .pair { display: flex; flex-wrap: wrap; gap: 0 12px; }
+    .pair span { color: #4F5A68; }
+    .more { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 32px; }
+    .latest { display: flex; flex-wrap: wrap; align-items: center; gap: 0 12px; }
+    .latest > span { font-size: 14px; color: #4F5A68; }
+
+    /* Contact and footer */
+    .email { align-self: flex-start; max-width: 100%; font-size: 20px; line-height: 30px; overflow-wrap: anywhere; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+    .email:hover { text-decoration-thickness: 2px; }
+    .links { display: flex; flex-wrap: wrap; gap: 0 28px; }
+    .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding: 24px 0 40px; border-top: 1px solid #D3DAE2; font-size: 14px; color: #4F5A68; }
   </style>
 </head>
 <body>
-  <main class="page">
-    <nav class="nav">
-      <div class="nav-left">
-        <div class="brand-mark"><span class="brand-mark-inner">SY</span></div>
-        <div class="nav-name">杨苏琪</div>
-      </div>
-      <div class="nav-links">
-        <a href="#about">关于</a>
-        <a href="#work">工作</a>
-        <a href="#writing">文章</a>
-        <a href="#media">媒体</a>
-        <a href="#contact">联系</a>
-        <span class="nav-divider"></span>
-        <a href="../">EN</a>
-        <a href="./">中文</a>
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="切换深色模式">
-          <span class="toggle-track">
-            <span class="toggle-thumb"></span>
-            <span class="toggle-icon toggle-icon-sun">☀</span>
-            <span class="toggle-icon toggle-icon-moon">☽</span>
-          </span>
-        </button>
-      </div>
+<div class="wrap" id="top">
+
+  <header class="top">
+    <a class="brand serif" href="#top">杨苏琪</a>
+    <nav aria-label="栏目">
+      <a href="#writing">文章</a>
+      <a href="#about">关于</a>
+      <a href="#elsewhere">媒体</a>
+      <a href="#contact">联系</a>
+      <a class="lang" href="/" lang="en" hreflang="en">EN</a>
     </nav>
+  </header>
 
-    <header id="about">
-      <div>
-        <p class="tagline">创始人 · CEO · 量化</p>
-        <h1>杨苏琪</h1>
-        <p class="subtitle">
-          <strong><a href="https://icontrading.com" target="_blank" rel="noreferrer">Icon Trading</a></strong> 创始人兼CEO
-        </p>
-
-        <p class="intro">
-          我专注于构建交易、基础设施与在线行为交汇领域的系统。我的工作核心是研究资本如何在市场中流动，以及注意力如何塑造流动性。
-        </p>
-
-        <p class="intro">
-          此前：<a href="https://panteracapital.com" target="_blank" rel="noreferrer">Pantera Capital</a> 量化研究员，<a href="https://electriccapital.com" target="_blank" rel="noreferrer">Electric Capital</a> 数据科学家。加州大学伯克利分校哈斯商学院金融工程硕士。
-        </p>
-
-        <div class="chips">
-          <span class="chip">纽约</span>
-          <span class="chip">加密货币交易</span>
-          <span class="chip">市场结构</span>
-          <span class="chip">注意力经济</span>
+  <main>
+    <section class="hero">
+      <div class="portrait">
+        <img src="/portrait.jpg" alt="杨苏琪的肖像" width="640" height="800">
+      </div>
+      <div class="intro">
+        <h1 class="serif">杨苏琪</h1>
+        <p class="lead">我创办并经营 Icon Trading，一家加密货币量化交易公司。我也写作，写市场、野心，以及那些被我们误认为是自己选择的系统。</p>
+        <div class="actions">
+          <a class="btn" href="#writing">读文章</a>
+          <a class="link" href="#about">关于我</a>
         </div>
       </div>
+    </section>
 
-      <div class="avatar-wrapper">
-        <figure class="avatar-card">
-          <img src="../avatar.jpg" alt="杨苏琪照片" />
-          <figcaption class="avatar-caption">
-            杨苏琪 — Icon Trading 创始人兼CEO
-          </figcaption>
-        </figure>
+    <section class="block" id="writing">
+      <h2 class="serif">文章</h2>
+      <div class="body">
+        <p class="lead">我在公开写一本书，一章一章地写，文章是英文的。可以从这五篇读起。</p>
+        <div class="list">
+          <a class="row" href="https://medium.com/@sukiunderwood1/chapter-62-everybody-knows-a62bb50ffa6b">
+            <span class="meta">第 62 章</span>
+            <span class="main">
+              <span class="t" lang="en">Everybody Knows</span>
+              <span class="d">一个看上去人人都该知道的价差，为什么还能一直存在。从我 2019 年在两家交易所之间做的一次套利讲起。</span>
+            </span>
+          </a>
+          <a class="row" href="https://medium.com/@sukiunderwood1/chapter-44-how-a-market-is-born-29ca312c324d">
+            <span class="meta">第 44 章</span>
+            <span class="main">
+              <span class="t" lang="en">How a Market Is Born</span>
+              <span class="d">集换式卡牌、代币发行和 IPO 做的是同一件事：资产的第一次分发。市场就是从这里开始的。</span>
+            </span>
+          </a>
+          <a class="row" href="https://medium.com/@sukiunderwood1/chapter-58-make-haste-slowly-d7d54802237d">
+            <span class="meta">第 58 章</span>
+            <span class="main">
+              <span class="t" lang="en">Make Haste Slowly</span>
+              <span class="d">信任像一本双方都无法审计的账。面对一个刚认识的人，一次没有准备好的推介要付出什么代价。</span>
+            </span>
+          </a>
+          <a class="row" href="https://medium.com/@sukiunderwood1/chapter-34-the-moat-3371415eefd9">
+            <span class="meta">第 34 章</span>
+            <span class="main">
+              <span class="t" lang="en">The Moat</span>
+              <span class="d">当人人都能写代码、做产品，一家公司的护城河是什么？别人又凭什么相信这一只基金，而不是另一只？</span>
+            </span>
+          </a>
+          <a class="row" href="https://medium.com/@sukiunderwood1/chapter-48-what-does-your-day-look-like-929dd3e8cc4b">
+            <span class="meta">第 48 章</span>
+            <span class="main">
+              <span class="t" lang="en">What Does Your Day Look Like?</span>
+              <span class="d">创始人的工作怎样从代码和模型变成了人，又怎样让投资人看得见这些工作。</span>
+            </span>
+          </a>
+        </div>
+        <div class="more">
+          <div class="latest">
+            <span>最新</span>
+            <a class="link" href="https://medium.com/@sukiunderwood1/chapter-66-morning-read-d38673ed5245">第 66 章：<span lang="en">Morning Read</span></a>
+          </div>
+          <a class="link accent" href="https://medium.com/@sukiunderwood1">在 Medium 阅读全部章节</a>
+        </div>
       </div>
-    </header>
-
-    <section id="work" class="section">
-      <h2>工作经历</h2>
-      <ul>
-        <li>
-          <strong><a href="https://icontrading.com" target="_blank" rel="noreferrer">Icon Trading</a></strong> — 创始人兼CEO<br />
-          一家量化交易公司，业务覆盖中心化和去中心化市场，专注于中频策略和延迟敏感型基础设施。
-        </li>
-
-        <li>
-          <strong><a href="https://lmao.fun" target="_blank" rel="noreferrer">LMAO</a></strong> — 创始人<br />
-          一个出版商交易所，帮助新代币和 meme 币将注意力转化为流动性。
-        </li>
-
-        <li>
-          <strong><a href="https://panteracapital.com" target="_blank" rel="noreferrer">Pantera Capital</a></strong> — 量化研究员<br />
-          在投资团队开发加密货币流动性代币投资策略。
-        </li>
-
-        <li>
-          <strong><a href="https://electriccapital.com" target="_blank" rel="noreferrer">Electric Capital</a></strong> — 数据科学家<br />
-          为加密货币风险投资提供数据分析支持。
-        </li>
-      </ul>
     </section>
 
-    <section id="writing" class="section">
-      <h2>文章</h2>
-      <ul>
-        <li>
-          Medium — 关于市场、激励机制和交易基础设施的深度笔记<br />
-          <a href="https://medium.com/@sukiunderwood1" target="_blank" rel="noreferrer">
-            medium.com/@sukiunderwood1
+    <section class="block" id="about">
+      <h2 class="serif">关于</h2>
+      <div class="body">
+        <p class="lead">我专注于构建交易、基础设施与在线行为交汇领域的系统。我的工作核心是研究资本如何在市场中流动，以及注意力如何塑造流动性。</p>
+        <dl class="list">
+          <div class="row">
+            <dt class="meta">现在</dt>
+            <dd class="main">
+              <span class="pair"><b class="t">Icon Trading</b><span>创始人兼 CEO</span></span>
+            </dd>
+          </div>
+          <div class="row">
+            <dt class="meta">此前</dt>
+            <dd class="main">
+              <span class="pair"><b class="t">LMAO</b><span>创始人</span></span>
+              <span class="pair"><b class="t">Pantera Capital</b><span>量化研究</span></span>
+              <span class="pair"><b class="t">Electric Capital</b><span>数据科学</span></span>
+              <span class="pair"><b class="t">滴滴</b><span>定价数据科学</span></span>
+            </dd>
+          </div>
+          <div class="row">
+            <dt class="meta">教育</dt>
+            <dd class="main">
+              <span class="pair"><b class="t">加州大学伯克利分校哈斯商学院</b><span>金融工程硕士</span></span>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="block" id="elsewhere">
+      <h2 class="serif">媒体与演讲</h2>
+      <div class="body">
+        <div class="list">
+          <a class="row" href="https://www.bloomberg.com/news/articles/2023-07-28/crypto-defi-trading-bots-like-unibot-are-taking-over-telegram">
+            <span class="meta">彭博社</span>
+            <span class="main t">关于交易自动化和 Telegram 流动性的采访</span>
           </a>
-        </li>
-        <li>
-          <a href="https://medium.com/@sukiunderwood1/crypto-trading-systematic-d159000b1c21" target="_blank" rel="noreferrer">
-            Crypto Trading, Systematic — 加密货币算法交易的工作原理
+          <a class="row" href="https://cryptonews.com/exclusives/from-quant-to-ceo-suki-yang-on-building-a-trading-machine-for-institutional-crypto/">
+            <span class="meta">CryptoNews</span>
+            <span class="main t">专访：从量化到 CEO，为机构加密货币构建交易机器</span>
           </a>
-        </li>
-        <li>
-          <a href="#" target="_blank" rel="noreferrer">
-            从点赞到流动性：将社交注意力转化为可预测的资金流
+          <a class="row" href="https://ethcc.io/speakers/suki-yang">
+            <span class="meta">EthCC[9]</span>
+            <span class="main t">演讲：加密货币中的高频交易</span>
           </a>
-        </li>
-      </ul>
+          <a class="row" href="https://unchainedcrypto.com/bitcoin-price-rebounds-to-just-under-60000-erasing-mondays-selloff/">
+            <span class="meta">Unchained</span>
+            <span class="main t">市场评论</span>
+          </a>
+          <a class="row" href="https://sherwood.news/crypto/dogecoin-races-up-as-crypto-market-rallies/">
+            <span class="meta">Sherwood</span>
+            <span class="main t">市场报道引用</span>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <section id="media" class="section">
-      <h2>演讲与媒体</h2>
-      <ul>
-        <li>
-          <strong><a href="https://ethcc.io/speakers/suki-yang" target="_blank" rel="noreferrer">EthCC[9]</a></strong> — 演讲嘉宾，2026年3月 <span class="featured-badge">即将举行</span><br />
-          "加密货币中的高频交易" — 深入探讨做市商和套利者如何保持 DeFi 市场的效率、7年系统构建经验总结，以及这对 ETH 作为金融基础设施的意义。
-        </li>
-
-        <li>
-          <strong>CryptoNews</strong> — 专题采访<br />
-          <a href="https://cryptonews.com/exclusives/from-quant-to-ceo-suki-yang-on-building-a-trading-machine-for-institutional-crypto/"
-             target="_blank" rel="noreferrer">从量化到CEO：为机构加密货币构建交易机器</a>
-        </li>
-
-        <li>
-          <strong>彭博社</strong> — 关于交易自动化和 Telegram 流动性的采访<br />
-          <a href="https://www.bloomberg.com/news/articles/2023-07-28/crypto-defi-trading-bots-like-unibot-are-taking-over-telegram?embedded-checkout=true"
-             target="_blank" rel="noreferrer">彭博社文章</a>
-        </li>
-
-        <li>
-          <strong>Unchained</strong> — 市场评论与 meme 币行为分析<br />
-          <a href="https://unchainedcrypto.com/bitcoin-price-rebounds-to-just-under-60000-erasing-mondays-selloff/"
-             target="_blank" rel="noreferrer">Unchained #1</a> · 
-          <a href="https://unchainedcrypto.com/eth-held-in-exchange-reserves-drops-to-8-year-low-with-etfs-set-to-begin-trading/"
-             target="_blank" rel="noreferrer">#2</a> · 
-          <a href="https://unchainedcrypto.com/chill-guy-meme-shows-tiktoks-growing-role-in-fueling-rise-of-memecoins/"
-             target="_blank" rel="noreferrer">#3</a> · 
-          <a href="https://unchainedcrypto.com/bonk-near-all-time-high-as-24-hour-volume-on-coinbase-exceeds-that-for-xrp-sol-and-ada/"
-             target="_blank" rel="noreferrer">#4</a>
-        </li>
-
-        <li>
-          <strong>币安广场</strong> — 评论引用<br />
-          <a href="https://www.binance.com/en/square/post/12874232696505"
-             target="_blank" rel="noreferrer">币安 #1</a> · 
-          <a href="https://www.binance.com/en/square/post/13173444483649"
-             target="_blank" rel="noreferrer">#2</a> · 
-          <a href="https://www.binance.com/en/square/post/01-20-2026-icon-trading-ceo-35339327638641"
-             target="_blank" rel="noreferrer">#3</a>
-        </li>
-
-        <li>
-          <strong>Sherwood</strong> — 市场报道引用<br />
-          <a href="https://sherwood.news/crypto/dogecoin-races-up-as-crypto-market-rallies/"
-             target="_blank" rel="noreferrer">Sherwood</a>
-        </li>
-
-        <li>
-          <strong>播客采访</strong><br />
-          <a href="https://www.youtube.com/watch?v=xoFswmQtN9Q"
-             target="_blank" rel="noreferrer">YouTube 采访</a>
-        </li>
-      </ul>
+    <section class="block last" id="contact">
+      <h2 class="serif">联系</h2>
+      <div class="body close">
+        <a class="email" href="mailto:suki@sukiyang.com">suki@sukiyang.com</a>
+        <div class="links">
+          <a class="link" href="https://twitter.com/tradergirlsuki">X @tradergirlsuki</a>
+          <a class="link" href="https://linkedin.com/in/sukiyang">领英</a>
+          <a class="link" href="https://medium.com/@sukiunderwood1">Medium</a>
+        </div>
+      </div>
     </section>
-
-    <section id="contact" class="section">
-      <h2>联系方式</h2>
-      <ul>
-        <li>邮箱：<a href="mailto:suki@sukiyang.com">suki@sukiyang.com</a></li>
-        <li>Twitter：<a href="https://twitter.com/tradergirlsuki" target="_blank" rel="noreferrer">@tradergirlsuki</a></li>
-        <li>领英：<a href="https://linkedin.com/in/sukiyang" target="_blank" rel="noreferrer">linkedin.com/in/sukiyang</a></li>
-      </ul>
-    </section>
-
-    <footer>
-      <p class="meta">最后更新：2026年1月</p>
-    </footer>
   </main>
 
-  <script>
-    (function () {
-      try {
-        const stored = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches;
-        const initial = stored || (prefersDark ? "dark" : "light");
-        document.documentElement.setAttribute("data-theme", initial);
-      } catch (e) {}
-    })();
+  <footer class="foot">
+    <span>© 2026 杨苏琪</span>
+    <span>纽约</span>
+  </footer>
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggle = document.querySelector("[data-theme-toggle]");
-      if (!toggle) return;
-
-      toggle.addEventListener("click", function () {
-        const current = document.documentElement.getAttribute("data-theme") || "light";
-        const next = current === "dark" ? "light" : "dark";
-        document.documentElement.setAttribute("data-theme", next);
-        try {
-          localStorage.setItem("theme", next);
-        } catch (e) {}
-      });
-    });
-  </script>
+</div>
 </body>
 </html>
